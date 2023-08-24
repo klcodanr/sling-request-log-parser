@@ -1,10 +1,10 @@
 <script setup>
 import RequestTable from './components/RequestTable.vue';
 import { ref } from 'vue';
-import CommonItems from './components/CommonItems.vue';
-import ExpensiveItems from './components/ExpensiveItems.vue';
+import CommonOperations from './components/CommonOperations.vue';
 import FlameGraph from './components/FlameGraph.vue';
 import RequestLogForm from './components/RequestLogForm.vue';
+import ExpensiveOperations from './components/ExpensiveOperations.vue';
 
 let parsed = ref({});
 let tab = ref('flame');
@@ -21,7 +21,11 @@ let tab = ref('flame');
           {{ parsed.lines[0].data.method }} {{ parsed.lines[0].data.path }} by
           {{ parsed.lines[0].data.user }}
         </h2>
-        <h3>Total Lines: {{ parsed.lines.length }}</h3>
+        <h5>Total Lines: {{ parsed.lines.length.toLocaleString() }}</h5>
+        <h5>
+          Total Time: {{ parsed.totalTime.toLocaleString() }} microseconds,
+          {{ (parsed.totalTime / 1000000.0).toFixed(4) }} seconds
+        </h5>
       </div>
 
       <ul class="nav nav-tabs" role="tablist">
@@ -55,7 +59,7 @@ let tab = ref('flame');
             type="button"
             role="tab"
           >
-            Expensive Items
+            Expensive Operations
           </button>
         </li>
         <li class="nav-item" role="presentation">
@@ -66,7 +70,7 @@ let tab = ref('flame');
             type="button"
             role="tab"
           >
-            Common Items
+            Common Operations
           </button>
         </li>
         <li class="nav-item" role="presentation">
@@ -101,14 +105,14 @@ let tab = ref('flame');
           role="tabpanel"
           v-bind:class="tab === 'expensive' ? 'active show' : ''"
         >
-          <ExpensiveItems :parsed="parsed" v-if="tab === 'expensive'" />
+          <ExpensiveOperations :parsed="parsed" v-if="tab === 'expensive'" />
         </div>
         <div
           class="tab-pane"
           role="tabpanel"
           v-bind:class="tab === 'common' ? 'active show' : ''"
         >
-          <CommonItems :parsed="parsed" v-if="tab === 'common'" />
+          <CommonOperations :parsed="parsed" v-if="tab === 'common'" />
         </div>
         <div
           class="tab-pane"
@@ -124,12 +128,3 @@ let tab = ref('flame');
     </div>
   </div>
 </template>
-
-<style scoped>
-textarea {
-  width: 100%;
-  height: 25vh;
-  display: block;
-  min-height: 300px;
-}
-</style>

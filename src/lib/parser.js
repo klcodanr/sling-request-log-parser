@@ -15,10 +15,11 @@
 
 const PATTERNS = [
   {
-    pattern: /.*(\d+) .*Dumping SlingRequestProgressTracker Entries$/,
+    pattern: /(\d+) TIMER_END.*Dumping SlingRequestProgressTracker Entries$/,
     fields: ['time'],
     idFields: [],
     type: 'DUMPING_ENTRIES',
+    includeDuration: false,
   },
   {
     pattern:
@@ -26,12 +27,14 @@ const PATTERNS = [
     fields: ['id', 'method', 'path', 'user'],
     idFields: ['id', 'method', 'path', 'user'],
     type: 'REQUEST',
+    includeDuration: false,
   },
   {
     pattern: /^(\d+) LOG Calling filter: ([\w\.]+)$/,
     fields: ['time', 'item'],
     idFields: ['item'],
     type: 'CALL_FILTER',
+    includeDuration: true,
   },
   {
     pattern:
@@ -39,18 +42,21 @@ const PATTERNS = [
     fields: ['time', 'item', 'inner', 'total', 'outer'],
     idFields: ['item'],
     type: 'FILTER_TIMING',
+    includeDuration: false,
   },
   {
     pattern: /^(\d+) TIMER_START{(.+)}$/,
     fields: ['time', 'item'],
     idFields: ['item'],
     type: 'TIMER_START',
+    includeDuration: true,
   },
   {
     pattern: /^(\d+) TIMER_END{(\d*),(.+)}\s*(.*)s*$/,
     fields: ['time', 'duration', 'item', 'detail'],
     idFields: ['item'],
     type: 'TIMER_END',
+    includeDuration: false,
   },
   {
     pattern:
@@ -71,6 +77,7 @@ const PATTERNS = [
     ],
     idFields: ['item'],
     type: 'INCLUDE_RESOURCE',
+    includeDuration: true,
   },
   {
     pattern:
@@ -88,6 +95,7 @@ const PATTERNS = [
     ],
     idFields: ['item'],
     type: 'INCLUDE_RESOURCE',
+    includeDuration: true,
   },
   {
     pattern:
@@ -104,12 +112,14 @@ const PATTERNS = [
     ],
     idFields: ['item'],
     type: 'INCLUDE_RESOURCE',
+    includeDuration: true,
   },
   {
     pattern: /^(\d+) LOG Method=(\w+), PathInfo=(.+)$/,
     fields: ['time', 'method', 'pathInfo'],
     idFields: ['method', 'pathInfo'],
     type: 'REQUEST_INFO',
+    includeDuration: false,
   },
   {
     pattern:
@@ -117,12 +127,14 @@ const PATTERNS = [
     fields: ['time', 'path', 'selector', 'extension', 'suffix'],
     idFields: ['path', 'selector', 'extension', 'suffix'],
     type: 'SLING_REQUEST_INFO',
+    includeDuration: true,
   },
   {
     pattern: /^(\d+) LOG Adding bindings took (\d*) microseconds$/,
     fields: ['time', 'duration'],
     idFields: [],
     type: 'BINDINGS',
+    includeDuration: false,
   },
   {
     pattern:
@@ -130,36 +142,41 @@ const PATTERNS = [
     fields: ['time', 'class', 'duration'],
     idFields: ['class'],
     type: 'BINDINGS',
+    includeDuration: false,
   },
   {
     pattern: /^(\d+) LOG Including script (.+) for path=(.+), type=(.+): (.+)$/,
     fields: ['time', 'scriptName', 'path', 'resourceType', 'scriptPath'],
     idFields: ['scriptName', 'path', 'resourceType', 'scriptPath'],
     type: 'INCLUDE_SCRIPT',
+    includeDuration: true,
   },
   {
     pattern: /^(\d+) LOG (.+)$/,
     fields: ['time', 'message'],
     idFields: ['message'],
     type: 'LOG',
+    includeDuration: false,
   },
   {
     pattern: /^(\d)+ COMMENT (.+)$/,
     fields: ['time', 'message'],
     idFields: ['message'],
     type: 'LOG',
+    includeDuration: false,
   },
 ];
 
 /**
  * @typedef ParsedLine
  * @property {Record<string,number|string>} data
- * @property {number} duration
- * @property {number} executionDuration
+ * @property {number} [duration]
+ * @property {number} [executionDuration]
  * @property {string} line
  * @property {number} time
  * @property {string} type
- * @property {string} name
+ * @property {string} [name]
+ * @property {number} [value]
  */
 
 /**
@@ -181,11 +198,12 @@ export class RequestLogParser {
    * @param {RequestTreeItem} requestItem
    */
   #calculateExecutionTime(requestItem) {
-    const childDuration = requestItem.children.reduce(
-      (prev, child) => prev + child.start.duration,
-      0,
-    );
-    if (requestItem.start) {
+    if (requestItem.start.duration) {
+      const childDuration = requestItem.children
+        .filter((c) => c.start.duration)
+
+        .reduce((prev, child) => prev + child.start.duration, 0);
+
       requestItem.start.executionDuration =
         requestItem.start.duration - childDuration;
     }
@@ -201,20 +219,22 @@ export class RequestLogParser {
     parsedLines
       .filter(
         (parsedLine) =>
-          parsedLine.data.item &&
+          parsedLine.name &&
           parsedLine.executionDuration &&
           parsedLine.type !== 'FILTER_TIMING',
       )
       .forEach((parsedLine) => {
-        const id = `${parsedLine.type}:${parsedLine.data.item}`;
+        const id = `${parsedLine.type}:${parsedLine.name.replace(/#\d+/, '')}`;
         if (!uniqueItems[id]) {
           uniqueItems[id] = {
             count: 0,
             executionDuration: 0,
+            instances: [],
           };
         }
         uniqueItems[id].count += 1;
         uniqueItems[id].executionDuration += parsedLine.executionDuration;
+        uniqueItems[id].instances.push(parsedLine);
       });
     return uniqueItems;
   }
@@ -243,7 +263,7 @@ export class RequestLogParser {
           const item = {
             start: parsedLine,
             children: [],
-            value: parsedLine.duration,
+            value: parsedLine.duration || 0,
             name: parsedLine.name,
           };
           parent.children.push(item);
@@ -268,9 +288,10 @@ export class RequestLogParser {
 
   /**
    * @param {string} line
+   * @param {ParsedLine} [previous]
    * @returns {ParsedLine | undefined}
    */
-  parseLine(line) {
+  parseLine(line, previous) {
     const data = {};
 
     const parser = PATTERNS.find((p) => p.pattern.exec(line.trim()));
@@ -284,31 +305,44 @@ export class RequestLogParser {
     });
     const name = parser.idFields.map((key) => `${data[key]}`).join(' ');
     const time = parseInt(data.time, 10);
+    if (previous && parser.includeDuration) {
+      previous.duration = time - previous.time;
+    }
+    let duration;
+    if (parser.type === 'BINDINGS' && data.class) {
+      duration = parseInt(data.duration, 10);
+    }
     return {
-      line,
       data,
+      duration,
+      executionDuration: duration,
+      line,
+      name: name || parser.type,
       time: time || 0,
       type: parser.type,
-      name: name || parser.type,
     };
   }
 
   /**
    * Parses the provided lines into a request tree
    * @param {Array<string>} lines the lines to parse
-   * @returns {{lines: ParsedLine[], requestTree: RequestTreeItem}} the parsed request
+   * @returns {{lines: ParsedLine[], requestTree: RequestTreeItem, items: Object}} the parsed request
    */
   parse(lines) {
     /**
      * @type {Array<ParsedLine>}
      */
     const parsedLines = [];
+    let prev;
     lines.forEach((line, idx) => {
-      const parsedLine = this.parseLine(line);
+      const parsedLine = this.parseLine(line, prev);
       if (parsedLine) {
-        if (idx !== 0) {
-          const prev = parsedLines[parsedLines.length - 1];
-          prev.duration = parsedLine.time - prev.time;
+        if (
+          idx !== 0 &&
+          (!prev || typeof prev.duration !== 'undefined') &&
+          !parsedLine.duration
+        ) {
+          prev = parsedLine;
         }
         parsedLines.push(parsedLine);
       } else {
@@ -317,6 +351,7 @@ export class RequestLogParser {
     });
 
     return {
+      totalTime: parsedLines.slice(-1)[0].time,
       lines: parsedLines,
       requestTree: this.#generateRequestTree(parsedLines),
       items: this.#groupByItem(parsedLines),

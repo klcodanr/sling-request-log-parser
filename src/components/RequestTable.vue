@@ -16,22 +16,43 @@ function search(term) {
 <template>
   <TableSearch @search="(term) => search(term)" />
   <div class="table-responsive">
-    <table class="table table-sm table-striped">
+    <table class="table table-sm">
       <thead>
         <tr>
-          <th>Time</th>
-          <th>Type</th>
-          <th>Duration</th>
-          <th>Execution Duration</th>
+          <th class="table-col-sm">Time</th>
+          <th class="table-col-sm">Type</th>
+          <th
+            class="table-col-sm"
+            title="The total time the operation took, including child operations"
+          >
+            Duration (μs)
+          </th>
+          <th
+            class="table-col-sm"
+            title="The total time only this operation took, subtracting child operations"
+          >
+            Execution Duration (μs)
+          </th>
           <th>Data</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="line in lines" :key="line.time">
+        <tr
+          v-for="line in lines"
+          :key="line.time"
+          :class="{
+            'table-danger': line.executionDuration > 100000,
+            'table-warning':
+              line.executionDuration > 10000 && line.executionDuration < 100000,
+            'table-light':
+              line.executionDuration > 1000 && line.executionDuration < 10000,
+          }"
+          :title="line.line"
+        >
           <td>{{ line.time }}</td>
           <td>{{ line.type }}</td>
-          <td>{{ line.duration }}</td>
-          <td>{{ line.executionDuration }}</td>
+          <td>{{ line.duration?.toLocaleString() }}</td>
+          <td>{{ line.executionDuration?.toLocaleString() }}</td>
           <td>
             <ul>
               <li v-for="entry in Object.entries(line.data)" :key="entry[0]">

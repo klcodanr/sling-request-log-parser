@@ -1,5 +1,19 @@
 .tab-pane {
   max-width: 100%;
-  overflow: auto;
-  max-height: 80vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 60vh;
+  padding: 0.25em;
+}
+
+table {
+  table-layout: fixed;
+}
+
+td {
+  overflow-wrap: anywhere;
+}
+
+.table-col-sm {
+  width: 200px;
 }

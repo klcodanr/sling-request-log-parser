@@ -32,17 +32,24 @@ function search() {
 
 <template>
   <nav class="navbar navbar-light bg-light">
-    <div class="form-inline">
-      <button
-        class="btn btn-outline-success my-2 my-sm-0"
-        @click="chart.resetZoom()"
-      >
-        Reset Zoom
-      </button>
-    </div>
+    <button
+      class="btn btn-outline-success my-2 my-sm-0"
+      @click="chart.resetZoom()"
+    >
+      Reset Zoom
+    </button>
 
     <div class="pull-right">
-      <form class="row row-cols-lg-auto g-3 align-items-center">
+      <form
+        class="row row-cols-lg-auto g-3 align-items-center"
+        @submit="
+          (event) => {
+            event.stopPropagation();
+            event.preventDefault();
+            emit('search', term);
+          }
+        "
+      >
         <div class="form-group">
           <a class="btn" @click="chart.clear()">Clear</a>
         </div>
