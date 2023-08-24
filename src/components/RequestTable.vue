@@ -1,8 +1,20 @@
 <script setup>
-defineProps(['parsed']);
+import { ref } from 'vue';
+import TableSearch from './TableSearch.vue';
+
+const props = defineProps(['parsed']);
+
+const lines = ref(props.parsed.lines);
+
+function search(term) {
+  lines.value = props.parsed.lines.filter(
+    (l) => !term || JSON.stringify(l).includes(term),
+  );
+}
 </script>
 
 <template>
+  <TableSearch @search="(term) => search(term)" />
   <div class="table-responsive">
     <table class="table table-sm table-striped">
       <thead>
@@ -15,7 +27,7 @@ defineProps(['parsed']);
         </tr>
       </thead>
       <tbody>
-        <tr v-for="line in parsed.lines" :key="line.time">
+        <tr v-for="line in lines" :key="line.time">
           <td>{{ line.time }}</td>
           <td>{{ line.type }}</td>
           <td>{{ line.duration }}</td>

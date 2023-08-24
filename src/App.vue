@@ -1,66 +1,18 @@
 <script setup>
 import RequestTable from './components/RequestTable.vue';
 import { ref } from 'vue';
-import { RequestLogParser } from './lib/parser.js';
 import CommonItems from './components/CommonItems.vue';
 import ExpensiveItems from './components/ExpensiveItems.vue';
 import FlameGraph from './components/FlameGraph.vue';
+import RequestLogForm from './components/RequestLogForm.vue';
 
-let error = ref(undefined);
-let tab = ref('all');
-let warnings = ref([]);
-let raw = '';
 let parsed = ref({});
-const parser = new RequestLogParser({
-  debug: () => {},
-  warn: (...msg) => warnings.value.push(msg.join(' ')),
-});
-function parse() {
-  error.value = undefined;
-  parsed.value = {};
-  warnings.value = [];
-  try {
-    parsed.value = parser.parse(raw.split(/\n|\r\n/));
-  } catch (err) {
-    console.error(err);
-    error.value = err;
-  }
-  if (!parsed.value.lines || parsed.value.lines.length === 0) {
-    error.value = { message: 'Failed to parse, no valid input provided' };
-  }
-}
+let tab = ref('flame');
 </script>
 
 <template>
   <div class="container">
-    <form class="my-4">
-      <div class="form-group">
-        <textarea
-          class="form-control"
-          v-model="raw"
-          placeholder="Paste request log here..."
-        ></textarea>
-      </div>
-      <div class="form-group my-2">
-        <button @click="parse" type="button" class="btn btn-primary">
-          Parse
-        </button>
-      </div>
-    </form>
-
-    <div class="alert alert-danger" role="alert" v-if="error">
-      {{ error.message }}
-    </div>
-    <div
-      class="alert alert-warning"
-      role="alert"
-      v-if="warnings && warnings.length > 0"
-    >
-      <p>WARNING:</p>
-      <ul>
-        <li v-for="msg in warnings" :key="msg">{{ msg }}</li>
-      </ul>
-    </div>
+    <RequestLogForm @parsed="(p) => (parsed = p)" />
 
     <div class="my-2" v-if="parsed.lines && parsed.lines.length > 0">
       <hr />

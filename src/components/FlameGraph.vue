@@ -23,6 +23,11 @@ onUpdated(() => {
     .datum(props.parsed.requestTree.children[0])
     .call(chart);
 });
+
+function search() {
+  const value = document.getElementById('flame-graph-term').value;
+  chart.search(value);
+}
 </script>
 
 <template>
@@ -32,10 +37,24 @@ onUpdated(() => {
         class="btn btn-outline-success my-2 my-sm-0"
         @click="chart.resetZoom()"
       >
-        Reset
+        Reset Zoom
       </button>
+    </div>
+
+    <div class="pull-right">
+      <form class="row row-cols-lg-auto g-3 align-items-center">
+        <div class="form-group">
+          <a class="btn" @click="chart.clear()">Clear</a>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="flame-graph-term" />
+        </div>
+        <div class="form-group">
+          <a class="btn btn-primary" @click="search()">Search</a>
+        </div>
+      </form>
     </div>
   </nav>
   <div id="flame-graph"></div>
-  <div id="flame-graph--details"></div>
+  <p>Element: <span id="flame-graph--details"></span></p>
 </template>
