@@ -1,0 +1,486 @@
+Request 1 (GET /content/personal-sites/danklco-com/index.html) by null - RequestProgressTracker Info
+      0 TIMER_START{Request Processing}
+      2 COMMENT timer_end format is {<elapsed microseconds>,<timer name>} <optional message>
+      7 LOG Method=GET, PathInfo=null
+     10 TIMER_START{handleSecurity}
+   5736 TIMER_END{5723,handleSecurity} authenticator org.apache.sling.auth.core.impl.SlingAuthenticator@c988169b returns true
+   7824 TIMER_START{ResourceResolution}
+   8908 TIMER_END{1082,ResourceResolution} URI=/content/personal-sites/danklco-com/index.html resolves to Resource=JcrNodeResource, type=sling:Page, superType=null, path=/content/personal-sites/danklco-com/index
+   8951 LOG Resource Path Info: SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index', selectorString='null', extension='html', suffix='null'
+   8952 TIMER_START{ServletResolution}
+   8955 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index)}
+   9072 TIMER_END{114,resolveServlet(/content/personal-sites/danklco-com/index)} Using servlet org.apache.sling.cms.core.internal.servlets.CMSPageServlet
+   9077 TIMER_END{124,ServletResolution} URI=/content/personal-sites/danklco-com/index.html handled by Servlet=org.apache.sling.cms.core.internal.servlets.CMSPageServlet
+   9084 LOG Applying Requestfilters
+   9119 LOG Calling filter: org.apache.sling.security.impl.ContentDispositionFilter
+   9178 LOG Calling filter: com.composum.sling.nodes.mount.remote.RemoteRequestFilter
+   9220 LOG Calling filter: org.apache.sling.rewriter.impl.RewriterFilter
+   9260 LOG Calling filter: org.apache.sling.i18n.impl.I18NFilter
+   9305 LOG Calling filter: org.apache.sling.engine.impl.debug.RequestProgressTrackerLogFilter
+   9333 LOG Calling filter: org.apache.sling.cms.core.internal.filters.LocaleFilter
+   9946 LOG Calling filter: org.apache.sling.cms.core.internal.filters.CMSSecurityFilter
+  10024 LOG Applying Componentfilters
+  10028 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+  10049 TIMER_START{org.apache.sling.cms.core.internal.servlets.CMSPageServlet#0}
+  10293 LOG Including resource JcrNodeResource, type=danklco-com/components/pages/base, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content', selectorString='null', extension='html', suffix='null')
+  10300 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content)}
+  11397 TIMER_END{1095,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content)} Using servlet /apps/danklco-com/components/pages/base/base.jsp
+  11400 LOG Applying Includefilters
+  11404 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+  11426 TIMER_START{/apps/danklco-com/components/pages/base/base.jsp#1}
+  13090 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 1523 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+  13092 LOG Adding bindings took 1578 microseconds
+  13920 LOG Including script head.jsp for path=/content/personal-sites/danklco-com/index/jcr:content, type=danklco-com/components/pages/base: /apps/danklco-com/components/pages/base/head.jsp
+  13921 TIMER_START{/apps/danklco-com/components/pages/base/head.jsp}
+  14137 LOG Adding bindings took 165 microseconds
+  14709 LOG Including script meta.jsp for path=/content/personal-sites/danklco-com/index/jcr:content, type=danklco-com/components/pages/base: /apps/danklco-com/components/pages/base/meta.jsp
+  14710 TIMER_START{/apps/danklco-com/components/pages/base/meta.jsp}
+  14896 LOG Adding bindings took 157 microseconds
+  15795 TIMER_END{1083,/apps/danklco-com/components/pages/base/meta.jsp}
+  15826 TIMER_END{1904,/apps/danklco-com/components/pages/base/head.jsp}
+  15855 LOG Including script body.jsp for path=/content/personal-sites/danklco-com/index/jcr:content, type=danklco-com/components/pages/base: /apps/danklco-com/components/pages/base/body.jsp
+  15856 TIMER_START{/apps/danklco-com/components/pages/base/body.jsp}
+  16053 LOG Adding bindings took 168 microseconds
+  16570 LOG Including script /libs/sling-cms/components/editor/scripts/init.jsp for path=/content/personal-sites/danklco-com/index/jcr:content, type=danklco-com/components/pages/base: /libs/sling-cms/components/editor/scripts/init.jsp
+  16571 TIMER_START{/libs/sling-cms/components/editor/scripts/init.jsp}
+  16866 LOG Adding bindings took 267 microseconds
+  17169 TIMER_END{597,/libs/sling-cms/components/editor/scripts/init.jsp}
+  17202 LOG Including script nav.jsp for path=/content/personal-sites/danklco-com/index/jcr:content, type=danklco-com/components/pages/base: /apps/danklco-com/components/pages/base/nav.jsp
+  17203 TIMER_START{/apps/danklco-com/components/pages/base/nav.jsp}
+  17396 LOG Adding bindings took 161 microseconds
+  17713 TIMER_END{508,/apps/danklco-com/components/pages/base/nav.jsp}
+  17801 LOG Including script home-header.jsp for path=/content/personal-sites/danklco-com/index/jcr:content, type=danklco-com/components/pages/base: /apps/danklco-com/components/pages/base/home-header.jsp
+  17802 TIMER_START{/apps/danklco-com/components/pages/base/home-header.jsp}
+  18056 LOG Adding bindings took 227 microseconds
+  18271 TIMER_END{467,/apps/danklco-com/components/pages/base/home-header.jsp}
+  18312 LOG Including script content.jsp for path=/content/personal-sites/danklco-com/index/jcr:content, type=danklco-com/components/pages/base: /apps/danklco-com/components/pages/base/content.jsp
+  18313 TIMER_START{/apps/danklco-com/components/pages/base/content.jsp}
+  18500 LOG Adding bindings took 158 microseconds
+  19022 TIMER_START{resolveIncludedResource(/content/personal-sites/danklco-com/index/jcr:content/container)}
+  19072 TIMER_END{48,resolveIncludedResource(/content/personal-sites/danklco-com/index/jcr:content/container)} path=/content/personal-sites/danklco-com/index/jcr:content/container resolves to Resource=JcrNodeResource, type=nt:unstructured, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container
+  19140 LOG Including resource TypeOverwritingResourceWrapper, type=sling-cms/components/general/container, path=/content/personal-sites/danklco-com/index/jcr:content/container, resource=[JcrNodeResource, type=nt:unstructured, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container] (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container', selectorString='null', extension='html', suffix='null')
+  19164 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container)}
+  19195 TIMER_END{29,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container)} Using servlet /libs/sling-cms/components/general/container/container.jsp
+  19198 LOG Applying Includefilters
+  19202 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+  19228 TIMER_START{/libs/sling-cms/components/general/container/container.jsp#2}
+  20651 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 1364 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+  20653 LOG Adding bindings took 1386 microseconds
+  21468 LOG Including resource JcrNodeResource, type=reference/components/general/stylewrapper, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper', selectorString='null', extension='html', suffix='null')
+  21487 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper)}
+  22087 TIMER_END{597,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper)} Using servlet /apps/reference/components/general/stylewrapper/stylewrapper.jsp
+  22089 LOG Applying Includefilters
+  22093 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+  22118 TIMER_START{/apps/reference/components/general/stylewrapper/stylewrapper.jsp#3}
+  23606 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 1415 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+  23608 LOG Adding bindings took 1432 microseconds
+  24139 TIMER_START{resolveIncludedResource(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container)}
+  24210 TIMER_END{69,resolveIncludedResource(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container)} path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container resolves to Resource=JcrNodeResource, type=nt:unstructured, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container
+  24259 LOG Including resource TypeOverwritingResourceWrapper, type=sling-cms/components/general/container, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container, resource=[JcrNodeResource, type=nt:unstructured, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container] (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container', selectorString='null', extension='html', suffix='null')
+  24265 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container)}
+  24289 TIMER_END{22,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container)} Using servlet /libs/sling-cms/components/general/container/container.jsp
+  24291 LOG Applying Includefilters
+  24294 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+  24318 TIMER_START{/libs/sling-cms/components/general/container/container.jsp#4}
+  25783 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 1411 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+  25785 LOG Adding bindings took 1429 microseconds
+  26355 LOG Including resource JcrNodeResource, type=sling-cms/components/general/richtext, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/richtext_hhoz4jcibn (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/richtext_hhoz4jcibn', selectorString='null', extension='html', suffix='null')
+  26373 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/richtext_hhoz4jcibn)}
+  26396 TIMER_END{22,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/richtext_hhoz4jcibn)} Using servlet /libs/sling-cms/components/general/richtext/richtext.jsp
+  26398 LOG Applying Includefilters
+  26401 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+  26426 TIMER_START{/libs/sling-cms/components/general/richtext/richtext.jsp#5}
+  28081 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 1605 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+  28082 LOG Adding bindings took 1620 microseconds
+  28440 TIMER_END{2012,/libs/sling-cms/components/general/richtext/richtext.jsp#5}
+  28537 LOG Including resource JcrNodeResource, type=reference/components/general/columncontrol, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol', selectorString='null', extension='html', suffix='null')
+  28543 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol)}
+  28567 TIMER_END{22,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol)} Using servlet /apps/reference/components/general/columncontrol/columncontrol.jsp
+  28579 LOG Applying Includefilters
+  28582 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+  28606 TIMER_START{/apps/reference/components/general/columncontrol/columncontrol.jsp#6}
+  30117 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 1473 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+  30119 LOG Adding bindings took 1490 microseconds
+  30845 TIMER_START{resolveIncludedResource(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0)}
+  30896 TIMER_END{48,resolveIncludedResource(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0)} path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0 resolves to Resource=JcrNodeResource, type=nt:unstructured, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0
+  30940 LOG Including resource TypeOverwritingResourceWrapper, type=sling-cms/components/general/container, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0, resource=[JcrNodeResource, type=nt:unstructured, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0] (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0', selectorString='null', extension='html', suffix='null')
+  30946 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0)}
+  31018 TIMER_END{70,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0)} Using servlet /libs/sling-cms/components/general/container/container.jsp
+  31034 LOG Applying Includefilters
+  31038 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+  31063 TIMER_START{/libs/sling-cms/components/general/container/container.jsp#7}
+  32641 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 1537 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+  32643 LOG Adding bindings took 1554 microseconds
+  36548 LOG Including resource JcrNodeResource, type=reference/components/general/stylewrapper, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper', selectorString='null', extension='html', suffix='null')
+  36559 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper)}
+  36589 TIMER_END{28,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper)} Using servlet /apps/reference/components/general/stylewrapper/stylewrapper.jsp
+  36593 LOG Applying Includefilters
+  36596 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+  36626 TIMER_START{/apps/reference/components/general/stylewrapper/stylewrapper.jsp#8}
+  41573 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 4901 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+  41575 LOG Adding bindings took 4921 microseconds
+  42152 TIMER_START{resolveIncludedResource(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container)}
+  42207 TIMER_END{52,resolveIncludedResource(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container)} path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container resolves to Resource=JcrNodeResource, type=nt:unstructured, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container
+  42252 LOG Including resource TypeOverwritingResourceWrapper, type=sling-cms/components/general/container, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container, resource=[JcrNodeResource, type=nt:unstructured, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container] (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container', selectorString='null', extension='html', suffix='null')
+  42280 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container)}
+  42302 TIMER_END{19,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container)} Using servlet /libs/sling-cms/components/general/container/container.jsp
+  42304 LOG Applying Includefilters
+  42308 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+  42337 TIMER_START{/libs/sling-cms/components/general/container/container.jsp#9}
+  46241 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 3847 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+  46244 LOG Adding bindings took 3872 microseconds
+  48041 LOG Including resource JcrNodeResource, type=reference/components/general/stylewrapper, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container/stylewrapper (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container/stylewrapper', selectorString='null', extension='html', suffix='null')
+  48049 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container/stylewrapper)}
+  48062 TIMER_END{11,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container/stylewrapper)} Using servlet /apps/reference/components/general/stylewrapper/stylewrapper.jsp
+  48064 LOG Applying Includefilters
+  48067 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+  48127 TIMER_START{/apps/reference/components/general/stylewrapper/stylewrapper.jsp#10}
+  51900 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 3706 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+  51902 LOG Adding bindings took 3731 microseconds
+  53288 TIMER_START{resolveIncludedResource(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container/stylewrapper/container)}
+  53419 TIMER_END{128,resolveIncludedResource(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container/stylewrapper/container)} path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container/stylewrapper/container resolves to Resource=JcrNodeResource, type=nt:unstructured, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container/stylewrapper/container
+  53493 LOG Including resource TypeOverwritingResourceWrapper, type=sling-cms/components/general/container, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container/stylewrapper/container, resource=[JcrNodeResource, type=nt:unstructured, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container/stylewrapper/container] (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container/stylewrapper/container', selectorString='null', extension='html', suffix='null')
+  53505 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container/stylewrapper/container)}
+  53521 TIMER_END{14,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container/stylewrapper/container)} Using servlet /libs/sling-cms/components/general/container/container.jsp
+  53524 LOG Applying Includefilters
+  53528 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+  53563 TIMER_START{/libs/sling-cms/components/general/container/container.jsp#11}
+  58084 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 4440 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+  58087 LOG Adding bindings took 4492 microseconds
+  60072 LOG Including resource JcrNodeResource, type=sling-cms/components/general/textelement, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container/stylewrapper/container/textelement (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container/stylewrapper/container/textelement', selectorString='null', extension='html', suffix='null')
+  60101 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container/stylewrapper/container/textelement)}
+  60119 TIMER_END{15,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container/stylewrapper/container/textelement)} Using servlet /libs/sling-cms/components/general/textelement/textelement.jsp
+  60144 LOG Applying Includefilters
+  60148 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+  60186 TIMER_START{/libs/sling-cms/components/general/textelement/textelement.jsp#12}
+  65443 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 5205 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+  65445 LOG Adding bindings took 5225 microseconds
+  65970 TIMER_END{5783,/libs/sling-cms/components/general/textelement/textelement.jsp#12}
+  67226 LOG Including resource JcrNodeResource, type=sling-cms/components/general/richtext, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container/stylewrapper/container/richtext (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container/stylewrapper/container/richtext', selectorString='null', extension='html', suffix='null')
+  67233 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container/stylewrapper/container/richtext)}
+  67248 TIMER_END{13,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container/stylewrapper/container/richtext)} Using servlet /libs/sling-cms/components/general/richtext/richtext.jsp
+  67270 LOG Applying Includefilters
+  67273 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+  67306 TIMER_START{/libs/sling-cms/components/general/richtext/richtext.jsp#13}
+  71186 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 3832 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+  71188 LOG Adding bindings took 3852 microseconds
+  73236 TIMER_END{5928,/libs/sling-cms/components/general/richtext/richtext.jsp#13}
+  73364 LOG Including resource JcrNodeResource, type=reference/components/general/cta, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container/stylewrapper/container/cta (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container/stylewrapper/container/cta', selectorString='null', extension='html', suffix='null')
+  73372 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container/stylewrapper/container/cta)}
+  74615 TIMER_END{1240,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-0/stylewrapper/container/stylewrapper/container/cta)} Using servlet /apps/reference/components/general/cta/cta.jsp
+  74619 LOG Applying Includefilters
+  74623 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+  74673 TIMER_START{/apps/reference/components/general/cta/cta.jsp#14}
+  79354 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 4580 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+  79356 LOG Adding bindings took 4604 microseconds
+  81026 TIMER_END{6351,/apps/reference/components/general/cta/cta.jsp#14}
+  81067 TIMER_END{27503,/libs/sling-cms/components/general/container/container.jsp#11}
+  81113 TIMER_END{32984,/apps/reference/components/general/stylewrapper/stylewrapper.jsp#10}
+  81148 TIMER_END{38810,/libs/sling-cms/components/general/container/container.jsp#9}
+  81167 TIMER_END{44540,/apps/reference/components/general/stylewrapper/stylewrapper.jsp#8}
+  81197 TIMER_END{50133,/libs/sling-cms/components/general/container/container.jsp#7}
+  81742 TIMER_START{resolveIncludedResource(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1)}
+  81810 TIMER_END{65,resolveIncludedResource(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1)} path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1 resolves to Resource=JcrNodeResource, type=nt:unstructured, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1
+  81859 LOG Including resource TypeOverwritingResourceWrapper, type=sling-cms/components/general/container, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1, resource=[JcrNodeResource, type=nt:unstructured, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1] (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1', selectorString='null', extension='html', suffix='null')
+  81866 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1)}
+  81882 TIMER_END{14,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1)} Using servlet /libs/sling-cms/components/general/container/container.jsp
+  81909 LOG Applying Includefilters
+  81914 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+  81945 TIMER_START{/libs/sling-cms/components/general/container/container.jsp#15}
+  85664 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 3667 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+  85666 LOG Adding bindings took 3688 microseconds
+  87397 LOG Including resource JcrNodeResource, type=reference/components/general/stylewrapper, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper', selectorString='null', extension='html', suffix='null')
+  87404 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper)}
+  87417 TIMER_END{11,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper)} Using servlet /apps/reference/components/general/stylewrapper/stylewrapper.jsp
+  87419 LOG Applying Includefilters
+  87422 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+  87450 TIMER_START{/apps/reference/components/general/stylewrapper/stylewrapper.jsp#16}
+  90213 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 2719 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+  90215 LOG Adding bindings took 2737 microseconds
+  91697 TIMER_START{resolveIncludedResource(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container)}
+  91761 TIMER_END{62,resolveIncludedResource(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container)} path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container resolves to Resource=JcrNodeResource, type=nt:unstructured, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container
+  91812 LOG Including resource TypeOverwritingResourceWrapper, type=sling-cms/components/general/container, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container, resource=[JcrNodeResource, type=nt:unstructured, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container] (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container', selectorString='null', extension='html', suffix='null')
+  91818 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container)}
+  91830 TIMER_END{10,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container)} Using servlet /libs/sling-cms/components/general/container/container.jsp
+  91832 LOG Applying Includefilters
+  91835 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+  91862 TIMER_START{/libs/sling-cms/components/general/container/container.jsp#17}
+  94741 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 2838 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+  94743 LOG Adding bindings took 2856 microseconds
+  97168 LOG Including resource JcrNodeResource, type=reference/components/general/stylewrapper, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container/stylewrapper (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container/stylewrapper', selectorString='null', extension='html', suffix='null')
+  97176 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container/stylewrapper)}
+  97194 TIMER_END{17,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container/stylewrapper)} Using servlet /apps/reference/components/general/stylewrapper/stylewrapper.jsp
+  97196 LOG Applying Includefilters
+  97200 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+  97229 TIMER_START{/apps/reference/components/general/stylewrapper/stylewrapper.jsp#18}
+ 100165 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 2877 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+ 100167 LOG Adding bindings took 2895 microseconds
+ 101805 TIMER_START{resolveIncludedResource(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container/stylewrapper/container)}
+ 101867 TIMER_END{59,resolveIncludedResource(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container/stylewrapper/container)} path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container/stylewrapper/container resolves to Resource=JcrNodeResource, type=nt:unstructured, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container/stylewrapper/container
+ 101919 LOG Including resource TypeOverwritingResourceWrapper, type=sling-cms/components/general/container, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container/stylewrapper/container, resource=[JcrNodeResource, type=nt:unstructured, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container/stylewrapper/container] (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container/stylewrapper/container', selectorString='null', extension='html', suffix='null')
+ 101924 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container/stylewrapper/container)}
+ 101937 TIMER_END{11,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container/stylewrapper/container)} Using servlet /libs/sling-cms/components/general/container/container.jsp
+ 101939 LOG Applying Includefilters
+ 101942 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+ 101971 TIMER_START{/libs/sling-cms/components/general/container/container.jsp#19}
+ 106017 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 3989 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+ 106019 LOG Adding bindings took 4021 microseconds
+ 106574 LOG Including resource JcrNodeResource, type=sling-cms/components/general/textelement, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container/stylewrapper/container/textelement (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container/stylewrapper/container/textelement', selectorString='null', extension='html', suffix='null')
+ 106580 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container/stylewrapper/container/textelement)}
+ 106593 TIMER_END{11,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container/stylewrapper/container/textelement)} Using servlet /libs/sling-cms/components/general/textelement/textelement.jsp
+ 106606 LOG Applying Includefilters
+ 106610 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+ 106639 TIMER_START{/libs/sling-cms/components/general/textelement/textelement.jsp#20}
+ 110938 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 4258 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+ 110940 LOG Adding bindings took 4275 microseconds
+ 112542 TIMER_END{5901,/libs/sling-cms/components/general/textelement/textelement.jsp#20}
+ 112638 LOG Including resource JcrNodeResource, type=sling-cms/components/general/richtext, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container/stylewrapper/container/richtext_utjdvphob1t (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container/stylewrapper/container/richtext_utjdvphob1t', selectorString='null', extension='html', suffix='null')
+ 112645 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container/stylewrapper/container/richtext_utjdvphob1t)}
+ 112659 TIMER_END{12,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container/stylewrapper/container/richtext_utjdvphob1t)} Using servlet /libs/sling-cms/components/general/richtext/richtext.jsp
+ 112676 LOG Applying Includefilters
+ 112680 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+ 112712 TIMER_START{/libs/sling-cms/components/general/richtext/richtext.jsp#21}
+ 117224 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 4463 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+ 117226 LOG Adding bindings took 4486 microseconds
+ 117690 TIMER_END{4975,/libs/sling-cms/components/general/richtext/richtext.jsp#21}
+ 118960 LOG Including resource JcrNodeResource, type=reference/components/general/cta, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container/stylewrapper/container/cta_kjaaevvoid (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container/stylewrapper/container/cta_kjaaevvoid', selectorString='null', extension='html', suffix='null')
+ 118970 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container/stylewrapper/container/cta_kjaaevvoid)}
+ 118986 TIMER_END{14,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-1/stylewrapper/container/stylewrapper/container/cta_kjaaevvoid)} Using servlet /apps/reference/components/general/cta/cta.jsp
+ 118988 LOG Applying Includefilters
+ 118993 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+ 119029 TIMER_START{/apps/reference/components/general/cta/cta.jsp#22}
+ 122249 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 3173 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+ 122251 LOG Adding bindings took 3191 microseconds
+ 122622 TIMER_END{3591,/apps/reference/components/general/cta/cta.jsp#22}
+ 122680 TIMER_END{20707,/libs/sling-cms/components/general/container/container.jsp#19}
+ 122701 TIMER_END{25471,/apps/reference/components/general/stylewrapper/stylewrapper.jsp#18}
+ 122740 TIMER_END{30877,/libs/sling-cms/components/general/container/container.jsp#17}
+ 122759 TIMER_END{35307,/apps/reference/components/general/stylewrapper/stylewrapper.jsp#16}
+ 122790 TIMER_END{40844,/libs/sling-cms/components/general/container/container.jsp#15}
+ 122931 TIMER_START{resolveIncludedResource(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2)}
+ 122982 TIMER_END{48,resolveIncludedResource(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2)} path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2 resolves to Resource=JcrNodeResource, type=nt:unstructured, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2
+ 125569 LOG Including resource TypeOverwritingResourceWrapper, type=sling-cms/components/general/container, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2, resource=[JcrNodeResource, type=nt:unstructured, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2] (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2', selectorString='null', extension='html', suffix='null')
+ 125575 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2)}
+ 125588 TIMER_END{11,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2)} Using servlet /libs/sling-cms/components/general/container/container.jsp
+ 125590 LOG Applying Includefilters
+ 125593 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+ 125620 TIMER_START{/libs/sling-cms/components/general/container/container.jsp#23}
+ 127113 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 1451 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+ 127115 LOG Adding bindings took 1469 microseconds
+ 127656 LOG Including resource JcrNodeResource, type=reference/components/general/stylewrapper, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper', selectorString='null', extension='html', suffix='null')
+ 127663 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper)}
+ 127674 TIMER_END{10,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper)} Using servlet /apps/reference/components/general/stylewrapper/stylewrapper.jsp
+ 127676 LOG Applying Includefilters
+ 127680 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+ 127705 TIMER_START{/apps/reference/components/general/stylewrapper/stylewrapper.jsp#24}
+ 134499 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 6541 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+ 134501 LOG Adding bindings took 6559 microseconds
+ 134970 TIMER_START{resolveIncludedResource(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container)}
+ 135025 TIMER_END{53,resolveIncludedResource(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container)} path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container resolves to Resource=JcrNodeResource, type=nt:unstructured, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container
+ 135076 LOG Including resource TypeOverwritingResourceWrapper, type=sling-cms/components/general/container, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container, resource=[JcrNodeResource, type=nt:unstructured, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container] (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container', selectorString='null', extension='html', suffix='null')
+ 135082 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container)}
+ 135094 TIMER_END{10,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container)} Using servlet /libs/sling-cms/components/general/container/container.jsp
+ 135096 LOG Applying Includefilters
+ 135099 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+ 135127 TIMER_START{/libs/sling-cms/components/general/container/container.jsp#25}
+ 136794 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 1612 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+ 136796 LOG Adding bindings took 1630 microseconds
+ 137299 LOG Including resource JcrNodeResource, type=reference/components/general/stylewrapper, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container/stylewrapper (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container/stylewrapper', selectorString='null', extension='html', suffix='null')
+ 137316 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container/stylewrapper)}
+ 137328 TIMER_END{10,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container/stylewrapper)} Using servlet /apps/reference/components/general/stylewrapper/stylewrapper.jsp
+ 137330 LOG Applying Includefilters
+ 137333 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+ 137360 TIMER_START{/apps/reference/components/general/stylewrapper/stylewrapper.jsp#26}
+ 139044 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 1636 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+ 139046 LOG Adding bindings took 1653 microseconds
+ 144608 TIMER_START{resolveIncludedResource(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container/stylewrapper/container)}
+ 144671 TIMER_END{59,resolveIncludedResource(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container/stylewrapper/container)} path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container/stylewrapper/container resolves to Resource=JcrNodeResource, type=nt:unstructured, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container/stylewrapper/container
+ 144731 LOG Including resource TypeOverwritingResourceWrapper, type=sling-cms/components/general/container, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container/stylewrapper/container, resource=[JcrNodeResource, type=nt:unstructured, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container/stylewrapper/container] (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container/stylewrapper/container', selectorString='null', extension='html', suffix='null')
+ 144737 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container/stylewrapper/container)}
+ 144749 TIMER_END{11,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container/stylewrapper/container)} Using servlet /libs/sling-cms/components/general/container/container.jsp
+ 144752 LOG Applying Includefilters
+ 144755 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+ 144786 TIMER_START{/libs/sling-cms/components/general/container/container.jsp#27}
+ 146748 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 1918 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+ 146750 LOG Adding bindings took 1937 microseconds
+ 147298 LOG Including resource JcrNodeResource, type=sling-cms/components/general/textelement, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container/stylewrapper/container/textelement (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container/stylewrapper/container/textelement', selectorString='null', extension='html', suffix='null')
+ 147305 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container/stylewrapper/container/textelement)}
+ 147317 TIMER_END{10,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container/stylewrapper/container/textelement)} Using servlet /libs/sling-cms/components/general/textelement/textelement.jsp
+ 147319 LOG Applying Includefilters
+ 147322 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+ 147351 TIMER_START{/libs/sling-cms/components/general/textelement/textelement.jsp#28}
+ 149275 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 1882 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+ 149278 LOG Adding bindings took 1902 microseconds
+ 149682 TIMER_END{2330,/libs/sling-cms/components/general/textelement/textelement.jsp#28}
+ 149767 LOG Including resource JcrNodeResource, type=sling-cms/components/general/richtext, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container/stylewrapper/container/richtext (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container/stylewrapper/container/richtext', selectorString='null', extension='html', suffix='null')
+ 149773 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container/stylewrapper/container/richtext)}
+ 149786 TIMER_END{11,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container/stylewrapper/container/richtext)} Using servlet /libs/sling-cms/components/general/richtext/richtext.jsp
+ 149788 LOG Applying Includefilters
+ 149791 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+ 149819 TIMER_START{/libs/sling-cms/components/general/richtext/richtext.jsp#29}
+ 160215 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 10300 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+ 160217 LOG Adding bindings took 10324 microseconds
+ 160666 TIMER_END{10845,/libs/sling-cms/components/general/richtext/richtext.jsp#29}
+ 160797 LOG Including resource JcrNodeResource, type=reference/components/general/cta, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container/stylewrapper/container/cta (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container/stylewrapper/container/cta', selectorString='null', extension='html', suffix='null')
+ 160806 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container/stylewrapper/container/cta)}
+ 160822 TIMER_END{14,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/stylewrapper/container/columncontrol/col-2/stylewrapper/container/stylewrapper/container/cta)} Using servlet /apps/reference/components/general/cta/cta.jsp
+ 160825 LOG Applying Includefilters
+ 160829 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+ 160865 TIMER_START{/apps/reference/components/general/cta/cta.jsp#30}
+ 162946 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 2033 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+ 162948 LOG Adding bindings took 2051 microseconds
+ 163292 TIMER_END{2426,/apps/reference/components/general/cta/cta.jsp#30}
+ 163353 TIMER_END{18565,/libs/sling-cms/components/general/container/container.jsp#27}
+ 163373 TIMER_END{26012,/apps/reference/components/general/stylewrapper/stylewrapper.jsp#26}
+ 163416 TIMER_END{28288,/libs/sling-cms/components/general/container/container.jsp#25}
+ 163435 TIMER_END{35729,/apps/reference/components/general/stylewrapper/stylewrapper.jsp#24}
+ 163467 TIMER_END{37846,/libs/sling-cms/components/general/container/container.jsp#23}
+ 163519 TIMER_END{134911,/apps/reference/components/general/columncontrol/columncontrol.jsp#6}
+ 163554 TIMER_END{139234,/libs/sling-cms/components/general/container/container.jsp#4}
+ 163573 TIMER_END{141454,/apps/reference/components/general/stylewrapper/stylewrapper.jsp#3}
+ 163641 LOG Including resource JcrNodeResource, type=reference/components/general/columncontrol, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol', selectorString='null', extension='html', suffix='null')
+ 163646 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol)}
+ 163658 TIMER_END{10,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol)} Using servlet /apps/reference/components/general/columncontrol/columncontrol.jsp
+ 163660 LOG Applying Includefilters
+ 163664 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+ 163694 TIMER_START{/apps/reference/components/general/columncontrol/columncontrol.jsp#31}
+ 170638 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 6902 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+ 170641 LOG Adding bindings took 6922 microseconds
+ 171534 TIMER_START{resolveIncludedResource(/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0)}
+ 171583 TIMER_END{47,resolveIncludedResource(/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0)} path=/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0 resolves to Resource=JcrNodeResource, type=nt:unstructured, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0
+ 171626 LOG Including resource TypeOverwritingResourceWrapper, type=sling-cms/components/general/container, path=/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0, resource=[JcrNodeResource, type=nt:unstructured, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0] (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0', selectorString='null', extension='html', suffix='null')
+ 171632 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0)}
+ 171646 TIMER_END{13,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0)} Using servlet /libs/sling-cms/components/general/container/container.jsp
+ 171673 LOG Applying Includefilters
+ 171677 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+ 171704 TIMER_START{/libs/sling-cms/components/general/container/container.jsp#32}
+ 173034 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 1283 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+ 173036 LOG Adding bindings took 1302 microseconds
+ 173599 LOG Including resource JcrNodeResource, type=sling-cms/components/general/richtext, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/richtext (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/richtext', selectorString='null', extension='html', suffix='null')
+ 173617 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/richtext)}
+ 173628 TIMER_END{10,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/richtext)} Using servlet /libs/sling-cms/components/general/richtext/richtext.jsp
+ 173630 LOG Applying Includefilters
+ 173634 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+ 173658 TIMER_START{/libs/sling-cms/components/general/richtext/richtext.jsp#33}
+ 180910 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 7204 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+ 180912 LOG Adding bindings took 7228 microseconds
+ 181409 TIMER_END{7749,/libs/sling-cms/components/general/richtext/richtext.jsp#33}
+ 181545 LOG Including resource JcrNodeResource, type=danklco-com/components/lists/home-posts, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/home_posts (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/home_posts', selectorString='null', extension='html', suffix='null')
+ 181555 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/home_posts)}
+ 182571 TIMER_END{1014,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/home_posts)} Using servlet /apps/danklco-com/components/lists/home-posts/home-posts.jsp
+ 182575 LOG Applying Includefilters
+ 182580 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+ 182611 TIMER_START{/apps/danklco-com/components/lists/home-posts/home-posts.jsp#34}
+ 184160 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 1495 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+ 184162 LOG Adding bindings took 1512 microseconds
+ 184487 LOG Including script init.jsp for path=/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/home_posts, type=danklco-com/components/lists/home-posts: /apps/reference/components/general/list/init.jsp
+ 184489 TIMER_START{/apps/reference/components/general/list/init.jsp}
+ 185806 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 1275 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+ 185808 LOG Adding bindings took 1291 microseconds
+ 240359 TIMER_END{55868,/apps/reference/components/general/list/init.jsp}
+ 240578 LOG Including script item.jsp for path=/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/home_posts, type=danklco-com/components/lists/home-posts: /apps/danklco-com/components/lists/home-posts/item.jsp
+ 240579 TIMER_START{/apps/danklco-com/components/lists/home-posts/item.jsp}
+ 241017 LOG Adding bindings took 376 microseconds
+ 245405 TIMER_END{4824,/apps/danklco-com/components/lists/home-posts/item.jsp}
+ 245458 LOG Including script item.jsp for path=/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/home_posts, type=danklco-com/components/lists/home-posts: /apps/danklco-com/components/lists/home-posts/item.jsp
+ 245459 TIMER_START{/apps/danklco-com/components/lists/home-posts/item.jsp}
+ 245833 LOG Adding bindings took 302 microseconds
+ 247077 TIMER_END{1617,/apps/danklco-com/components/lists/home-posts/item.jsp}
+ 247118 LOG Including script item.jsp for path=/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/home_posts, type=danklco-com/components/lists/home-posts: /apps/danklco-com/components/lists/home-posts/item.jsp
+ 247119 TIMER_START{/apps/danklco-com/components/lists/home-posts/item.jsp}
+ 247429 LOG Adding bindings took 281 microseconds
+ 248707 TIMER_END{1587,/apps/danklco-com/components/lists/home-posts/item.jsp}
+ 248746 LOG Including script item.jsp for path=/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/home_posts, type=danklco-com/components/lists/home-posts: /apps/danklco-com/components/lists/home-posts/item.jsp
+ 248747 TIMER_START{/apps/danklco-com/components/lists/home-posts/item.jsp}
+ 249056 LOG Adding bindings took 280 microseconds
+ 255081 LOG Found processor for post processing ProcessorConfiguration: {contentTypes=[text/html], paths=[/content], extensions=[html], order=1000, active=true, valid=true, processErrorResponse=true, pipeline=(generator=Config(type=html-generator, config=JcrPropertyMap [node=Node[NodeDelegate{tree=/libs/sling-cms/config/rewriter/reference-mapping-rewriter/generator-html-generator: { jcr:primaryType = nt:unstructured, includeTags = [A, AREA, AUDIO, BASE, EMBED, FORM, IFRAME, IMG, LINK, OBJECT, SCRIPT, SOURCE, TRACK, VIDEO]}}], values={jcr:primaryType=nt:unstructured, includeTags=[Ljava.lang.String;@f1b5cebb}]), transformers=(Config(type=referencemapping, config={}), serializer=Config(type=html5-serializer, config={}))}
+ 255182 TIMER_END{6433,/apps/danklco-com/components/lists/home-posts/item.jsp}
+ 255572 LOG Including script item.jsp for path=/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/home_posts, type=danklco-com/components/lists/home-posts: /apps/danklco-com/components/lists/home-posts/item.jsp
+ 255573 TIMER_START{/apps/danklco-com/components/lists/home-posts/item.jsp}
+ 255937 LOG Adding bindings took 325 microseconds
+ 258852 TIMER_END{3277,/apps/danklco-com/components/lists/home-posts/item.jsp}
+ 258898 LOG Including script item.jsp for path=/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/home_posts, type=danklco-com/components/lists/home-posts: /apps/danklco-com/components/lists/home-posts/item.jsp
+ 258899 TIMER_START{/apps/danklco-com/components/lists/home-posts/item.jsp}
+ 259211 LOG Adding bindings took 287 microseconds
+ 262318 TIMER_END{3417,/apps/danklco-com/components/lists/home-posts/item.jsp}
+ 262360 LOG Including script item.jsp for path=/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/home_posts, type=danklco-com/components/lists/home-posts: /apps/danklco-com/components/lists/home-posts/item.jsp
+ 262362 TIMER_START{/apps/danklco-com/components/lists/home-posts/item.jsp}
+ 262676 LOG Adding bindings took 290 microseconds
+ 263885 TIMER_END{1522,/apps/danklco-com/components/lists/home-posts/item.jsp}
+ 263926 LOG Including script item.jsp for path=/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/home_posts, type=danklco-com/components/lists/home-posts: /apps/danklco-com/components/lists/home-posts/item.jsp
+ 263927 TIMER_START{/apps/danklco-com/components/lists/home-posts/item.jsp}
+ 264260 LOG Adding bindings took 309 microseconds
+ 271587 TIMER_END{7658,/apps/danklco-com/components/lists/home-posts/item.jsp}
+ 271641 LOG Including script item.jsp for path=/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/home_posts, type=danklco-com/components/lists/home-posts: /apps/danklco-com/components/lists/home-posts/item.jsp
+ 271642 TIMER_START{/apps/danklco-com/components/lists/home-posts/item.jsp}
+ 271963 LOG Adding bindings took 295 microseconds
+ 273188 TIMER_END{1544,/apps/danklco-com/components/lists/home-posts/item.jsp}
+ 273226 LOG Including script item.jsp for path=/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/home_posts, type=danklco-com/components/lists/home-posts: /apps/danklco-com/components/lists/home-posts/item.jsp
+ 273227 TIMER_START{/apps/danklco-com/components/lists/home-posts/item.jsp}
+ 273528 LOG Adding bindings took 277 microseconds
+ 274659 TIMER_END{1430,/apps/danklco-com/components/lists/home-posts/item.jsp}
+ 274700 LOG Including script item.jsp for path=/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/home_posts, type=danklco-com/components/lists/home-posts: /apps/danklco-com/components/lists/home-posts/item.jsp
+ 274702 TIMER_START{/apps/danklco-com/components/lists/home-posts/item.jsp}
+ 275009 LOG Adding bindings took 284 microseconds
+ 282676 TIMER_END{7972,/apps/danklco-com/components/lists/home-posts/item.jsp}
+ 282759 LOG Including script item.jsp for path=/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/home_posts, type=danklco-com/components/lists/home-posts: /apps/danklco-com/components/lists/home-posts/item.jsp
+ 282760 TIMER_START{/apps/danklco-com/components/lists/home-posts/item.jsp}
+ 283123 LOG Adding bindings took 316 microseconds
+ 291977 TIMER_END{9215,/apps/danklco-com/components/lists/home-posts/item.jsp}
+ 292045 TIMER_END{109432,/apps/danklco-com/components/lists/home-posts/home-posts.jsp#34}
+ 292215 LOG Including resource JcrNodeResource, type=reference/components/general/stylewrapper, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/stylewrapper (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/stylewrapper', selectorString='null', extension='html', suffix='null')
+ 292229 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/stylewrapper)}
+ 292248 TIMER_END{18,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/stylewrapper)} Using servlet /apps/reference/components/general/stylewrapper/stylewrapper.jsp
+ 292251 LOG Applying Includefilters
+ 292256 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+ 292296 TIMER_START{/apps/reference/components/general/stylewrapper/stylewrapper.jsp#35}
+ 293896 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 1541 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+ 293898 LOG Adding bindings took 1566 microseconds
+ 294392 TIMER_START{resolveIncludedResource(/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/stylewrapper/container)}
+ 294441 TIMER_END{47,resolveIncludedResource(/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/stylewrapper/container)} path=/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/stylewrapper/container resolves to Resource=JcrNodeResource, type=nt:unstructured, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/stylewrapper/container
+ 294471 LOG Including resource TypeOverwritingResourceWrapper, type=sling-cms/components/general/container, path=/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/stylewrapper/container, resource=[JcrNodeResource, type=nt:unstructured, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/stylewrapper/container] (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/stylewrapper/container', selectorString='null', extension='html', suffix='null')
+ 294479 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/stylewrapper/container)}
+ 294492 TIMER_END{11,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/stylewrapper/container)} Using servlet /libs/sling-cms/components/general/container/container.jsp
+ 294494 LOG Applying Includefilters
+ 294497 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+ 294522 TIMER_START{/libs/sling-cms/components/general/container/container.jsp#36}
+ 302017 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 7452 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+ 302019 LOG Adding bindings took 7476 microseconds
+ 302738 LOG Including resource JcrNodeResource, type=reference/components/general/cta, superType=null, path=/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/stylewrapper/container/cta (SlingRequestPathInfo: path='/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/stylewrapper/container/cta', selectorString='null', extension='html', suffix='null')
+ 302745 TIMER_START{resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/stylewrapper/container/cta)}
+ 302760 TIMER_END{12,resolveServlet(/content/personal-sites/danklco-com/index/jcr:content/container/columncontrol/col-0/stylewrapper/container/cta)} Using servlet /apps/reference/components/general/cta/cta.jsp
+ 302762 LOG Applying Includefilters
+ 302767 LOG Calling filter: org.apache.sling.cms.core.internal.filters.EditIncludeFilter
+ 302803 TIMER_START{/apps/reference/components/general/cta/cta.jsp#37}
+ 304428 LOG Adding the bindings of org.apache.sling.cms.core.internal.DefaultScriptBindingsValueProvider took 1584 microseconds which is above the hardcoded limit of 1000 microseconds; if this message appears often it indicates that this BindingsValuesProvider has an impact on general page rendering performance.
+ 304430 LOG Adding bindings took 1602 microseconds
+ 304791 TIMER_END{1987,/apps/reference/components/general/cta/cta.jsp#37}
+ 304851 TIMER_END{10327,/libs/sling-cms/components/general/container/container.jsp#36}
+ 304872 TIMER_END{12574,/apps/reference/components/general/stylewrapper/stylewrapper.jsp#35}
+ 304909 TIMER_END{133203,/libs/sling-cms/components/general/container/container.jsp#32}
+ 304960 TIMER_END{141265,/apps/reference/components/general/columncontrol/columncontrol.jsp#31}
+ 304986 TIMER_END{285756,/libs/sling-cms/components/general/container/container.jsp#2}
+ 305014 TIMER_END{286700,/apps/danklco-com/components/pages/base/content.jsp}
+ 305061 LOG Including script footer.jsp for path=/content/personal-sites/danklco-com/index/jcr:content, type=danklco-com/components/pages/base: /apps/danklco-com/components/pages/base/footer.jsp
+ 305063 TIMER_START{/apps/danklco-com/components/pages/base/footer.jsp}
+ 305256 LOG Adding bindings took 170 microseconds
+ 307240 TIMER_END{2176,/apps/danklco-com/components/pages/base/footer.jsp}
+ 307264 LOG Including script scripts.jsp for path=/content/personal-sites/danklco-com/index/jcr:content, type=danklco-com/components/pages/base: /apps/danklco-com/components/pages/base/scripts.jsp
+ 307265 TIMER_START{/apps/danklco-com/components/pages/base/scripts.jsp}
+ 307541 LOG Adding bindings took 251 microseconds
+ 307720 TIMER_END{453,/apps/danklco-com/components/pages/base/scripts.jsp}
+ 311631 LOG Including script /libs/sling-cms/components/editor/scripts/finalize.jsp for path=/content/personal-sites/danklco-com/index/jcr:content, type=danklco-com/components/pages/base: /libs/sling-cms/components/editor/scripts/finalize.jsp
+ 311632 TIMER_START{/libs/sling-cms/components/editor/scripts/finalize.jsp}
+ 311844 LOG Adding bindings took 185 microseconds
+ 312187 TIMER_END{553,/libs/sling-cms/components/editor/scripts/finalize.jsp}
+ 312224 TIMER_END{296367,/apps/danklco-com/components/pages/base/body.jsp}
+ 312254 TIMER_END{300827,/apps/danklco-com/components/pages/base/base.jsp#1}
+ 312276 TIMER_END{302225,org.apache.sling.cms.core.internal.servlets.CMSPageServlet#0}
+ 312293 TIMER_END{312292,Request Processing} Request Processing
+ 344263 LOG Filter timing: filter=org.apache.sling.cms.core.internal.filters.CMSSecurityFilter, inner=302259, total=302342, outer=83
+ 344273 LOG Filter timing: filter=org.apache.sling.cms.core.internal.filters.LocaleFilter, inner=302342, total=302957, outer=615
+ 344282 LOG Filter timing: filter=org.apache.sling.engine.impl.debug.RequestProgressTrackerLogFilter, inner=302957, total=302995, outer=38
+ 344290 LOG Filter timing: filter=org.apache.sling.i18n.impl.I18NFilter, inner=302995, total=303042, outer=47
+ 344298 LOG Filter timing: filter=org.apache.sling.rewriter.impl.RewriterFilter, inner=303042, total=335009, outer=31967
+ 344312 LOG Filter timing: filter=com.composum.sling.nodes.mount.remote.RemoteRequestFilter, inner=335009, total=335055, outer=46
+ 344321 LOG Filter timing: filter=org.apache.sling.security.impl.ContentDispositionFilter, inner=335055, total=335118, outer=63
