@@ -1,5 +1,5 @@
 <script setup>
-defineProps(['parsed'])
+defineProps(['parsed']);
 </script>
 
 <template>

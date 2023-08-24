@@ -1,5 +1,5 @@
 <script setup>
-defineProps(['parsed'])
+defineProps(['parsed']);
 </script>
 
 <template>
@@ -15,8 +15,11 @@ defineProps(['parsed'])
       </thead>
       <tbody>
         <tr
-          v-for="entry in Object.entries(parsed.items).filter(e => e[1].count > 1).sort((e1, e2) => e2[1].count - e1[1].count)"
-          :key="entry[0]">
+          v-for="entry in Object.entries(parsed.items)
+            .filter((e) => e[1].count > 1)
+            .sort((e1, e2) => e2[1].count - e1[1].count)"
+          :key="entry[0]"
+        >
           <td>{{ entry[0].split(':')[0] }}</td>
           <td>{{ entry[0].split(':').slice(1).join(':') }}</td>
           <td>{{ entry[1].count }}</td>
