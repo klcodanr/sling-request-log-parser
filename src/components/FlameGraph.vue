@@ -10,7 +10,7 @@ onMounted(() => {
   var details = document.getElementById('flame-graph--details');
   chart = flamegraph()
     .width(1050)
-    .height(400)
+    .cellHeight(24)
     .setColorMapper((el, originalColor) => {
       if (el.highlight) {
         return originalColor
@@ -22,7 +22,7 @@ onMounted(() => {
         return '#D22128'
       }
       if (el.data.name.includes('/apps') || el.data.name.includes('/mnt') || el.data.name.includes('/conf') || el.data.name.includes('/content') || el.data.name.includes('com.')) {
-        return '#0dcaf0';
+        return '#ffc107';
       }
 
       return '#adb5bd';
@@ -88,7 +88,7 @@ function search() {
             Apache Sling
           </li>
           <li>
-            <span class="color-block" style="background-color: #0dcaf0;"></span>
+            <span class="color-block" style="background-color: #ffc107;"></span>
             Customer / Extension
           </li>
           <li>
