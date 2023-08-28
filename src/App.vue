@@ -17,7 +17,7 @@ let tab = ref('flame');
     <div class="my-2" v-if="parsed.lines && parsed.lines.length > 0">
       <hr />
       <div class="my-4">
-        <h2>
+        <h2 v-if="parsed.lines[0].data.method || parsed.lines[0].data.path">
           {{ parsed.lines[0].data.method }} {{ parsed.lines[0].data.path }} by
           {{ parsed.lines[0].data.user }}
         </h2>

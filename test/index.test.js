@@ -385,17 +385,6 @@ describe('Index Tests', () => {
     });
   });
 
-  it('will fail on invalid tree', () => {
-    assert.throws(() =>
-      parser.parse([
-        '32654741 TIMER_END{32654740,Request Processing} Request Processing',
-        '32654741 TIMER_END{32654740,Request Processing} Request Processing',
-        '32654741 TIMER_END{32654740,Request Processing} Request Processing',
-        '32654741 TIMER_END{32654740,Request Processing} Request Processing',
-      ]),
-    );
-  });
-
   it('ignores invalid lines', () => {
     const res = parser.parse([
       'Request 1692728012118-19 (GET /assets.html/content/dam) by admin - RequestProgressTracker Info',

@@ -1,0 +1,279 @@
+ 0 TIMER_START{Request Processing}
+      4 COMMENT timer_end format is {<elapsed microseconds>,<timer name>} <optional message>
+     10 LOG Method=GET, PathInfo=null
+     12 TIMER_START{handleSecurity}
+   1634 TIMER_END{1619,handleSecurity} authenticator org.apache.sling.auth.core.impl.SlingAuthenticator@190319de returns true
+   2526 TIMER_START{ResourceResolution}
+   3059 TIMER_END{531,ResourceResolution} URI=/mnt/overlay/granite/ui/content/shell/start/content/cq/items/tabs/items/home/content.0.20.html/mnt/overlay/cq/core/content/nav/assets resolves to Resource=MergedResource [path=/mnt/overlay/granite/ui/content/shell/start/content/cq/items/tabs/items/home/content, resources=[/libs/granite/ui/content/shell/start/content/cq/items/tabs/items/home/content]]
+   3071 LOG Resource Path Info: SlingRequestPathInfo: path='/mnt/overlay/granite/ui/content/shell/start/content/cq/items/tabs/items/home/content', selectorString='0.20', extension='html', suffix='/mnt/overlay/cq/core/content/nav/assets'
+   3071 TIMER_START{ServletResolution}
+   3076 TIMER_START{resolveServlet(/mnt/overlay/granite/ui/content/shell/start/content/cq/items/tabs/items/home/content)}
+   4265 TIMER_END{1186,resolveServlet(/mnt/overlay/granite/ui/content/shell/start/content/cq/items/tabs/items/home/content)} Using servlet /libs/granite/ui/components/coral/foundation/masonry/masonry.jsp
+   4270 TIMER_END{1197,ServletResolution} URI=/mnt/overlay/granite/ui/content/shell/start/content/cq/items/tabs/items/home/content.0.20.html/mnt/overlay/cq/core/content/nav/assets handled by Servlet=/libs/granite/ui/components/coral/foundation/masonry/masonry.jsp
+   4280 LOG Applying Requestfilters
+   4288 LOG Calling filter: com.adobe.granite.resourceresolverhelper.impl.ResourceResolverHelperImpl
+   4294 LOG Calling filter: org.apache.sling.security.impl.ContentDispositionFilter
+   4299 LOG Calling filter: com.adobe.granite.csrf.impl.CSRFFilter
+   4305 LOG Calling filter: org.apache.sling.i18n.impl.I18NFilter
+   4310 LOG Calling filter: com.adobe.granite.httpcache.impl.InnerCacheFilter
+   4318 LOG Calling filter: org.apache.sling.rewriter.impl.RewriterFilter
+   4322 LOG Calling filter: com.adobe.cq.history.impl.HistoryRequestFilter
+   4539 LOG Calling filter: com.day.cq.wcm.core.impl.WCMRequestFilter
+   4553 LOG Calling filter: com.adobe.cq.wcm.core.components.internal.servlets.CoreFormHandlingServlet
+   4557 LOG Calling filter: com.adobe.granite.optout.impl.OptOutFilter
+   4565 LOG Calling filter: com.day.cq.wcm.foundation.forms.impl.FormsHandlingServlet
+   4568 LOG Calling filter: com.adobe.cq.social.commons.cors.CORSAuthenticationFilter
+   4571 LOG Calling filter: org.apache.sling.engine.impl.debug.RequestProgressTrackerLogFilter
+   4573 LOG Calling filter: com.day.cq.wcm.mobile.core.impl.redirect.RedirectFilter
+   4576 LOG Calling filter: com.day.cq.wcm.core.impl.AuthoringUIModeServiceImpl
+   4733 LOG Calling filter: com.adobe.granite.rest.assets.impl.AssetContentDispositionFilter
+   4737 LOG Calling filter: com.adobe.granite.requests.logging.impl.RequestLoggerImpl
+   4744 LOG Calling filter: com.adobe.granite.rest.impl.servlet.ApiResourceFilter
+   4796 LOG Calling filter: com.day.cq.dam.core.impl.servlet.ActivityRecordHandler
+   4811 LOG Calling filter: com.day.cq.dam.core.impl.assetlinkshare.AdhocAssetShareAuthHandler
+   4815 LOG Calling filter: com.adobe.cq.social.ugcbase.security.impl.SaferSlingPostServlet
+   4818 LOG Calling filter: com.day.cq.wcm.core.impl.warp.TimeWarpFilter
+   4834 LOG Applying Componentfilters
+   4836 LOG Calling filter: com.day.cq.personalization.impl.TargetComponentFilter
+   4838 LOG Calling filter: com.day.cq.wcm.core.impl.page.PageLockFilter
+   4842 LOG Calling filter: com.day.cq.wcm.core.impl.WCMComponentFilter
+   6164 LOG Calling filter: com.day.cq.wcm.core.impl.WCMDebugFilter
+   6202 TIMER_START{/libs/granite/ui/components/coral/foundation/masonry/masonry.jsp#0}
+   8640 LOG Including resource TypeOverwritingResourceWrapper, type=granite/ui/components/shell/globalnav/datasources/navitems, path=/mnt/overlay/granite/ui/content/shell/start/content/cq/items/tabs/items/home/content, resource=[DatasourceOverrideWrapper, type=granite/ui/components/coral/foundation/masonry, path=/mnt/overlay/granite/ui/content/shell/start/content/cq/items/tabs/items/home/content, resource=[MergedResource [path=/mnt/overlay/granite/ui/content/shell/start/content/cq/items/tabs/items/home/content, resources=[/libs/granite/ui/content/shell/start/content/cq/items/tabs/items/home/content]]]] (SlingRequestPathInfo: path='/mnt/overlay/granite/ui/content/shell/start/content/cq/items/tabs/items/home/content', selectorString='0.20', extension='html', suffix='/mnt/overlay/cq/core/content/nav/assets')
+   8663 TIMER_START{resolveServlet(/mnt/overlay/granite/ui/content/shell/start/content/cq/items/tabs/items/home/content)}
+   9641 TIMER_END{975,resolveServlet(/mnt/overlay/granite/ui/content/shell/start/content/cq/items/tabs/items/home/content)} Using servlet /libs/granite/ui/components/shell/globalnav/datasources/navitems/navitems.jsp
+   9647 LOG Applying Includefilters
+   9652 LOG Calling filter: com.adobe.granite.csrf.impl.CSRFFilter
+   9659 LOG Calling filter: com.day.cq.personalization.impl.TargetComponentFilter
+   9663 LOG Calling filter: com.day.cq.wcm.core.impl.page.PageLockFilter
+   9667 LOG Calling filter: com.day.cq.wcm.core.impl.WCMComponentFilter
+  10907 LOG Calling filter: com.day.cq.wcm.core.impl.WCMDebugFilter
+  10916 LOG Calling filter: com.day.cq.wcm.core.impl.WCMDeveloperModeFilter
+  10947 TIMER_START{/libs/granite/ui/components/shell/globalnav/datasources/navitems/navitems.jsp#1}
+  12152 LOG Including resource MergedResource [path=/mnt/overlay/cq/core/content/nav/assets/stocksearch/granite:rendercondition, resources=[/libs/cq/core/content/nav/assets/stocksearch/granite:rendercondition]] (SlingRequestPathInfo: path='/mnt/overlay/cq/core/content/nav/assets/stocksearch/granite:rendercondition', selectorString='0.20', extension='html', suffix='/mnt/overlay/cq/core/content/nav/assets')
+  12158 TIMER_START{resolveServlet(/mnt/overlay/cq/core/content/nav/assets/stocksearch/granite:rendercondition)}
+  13222 TIMER_END{1062,resolveServlet(/mnt/overlay/cq/core/content/nav/assets/stocksearch/granite:rendercondition)} Using servlet /libs/granite/ui/components/coral/foundation/renderconditions/and/and.jsp
+  13228 LOG Applying Includefilters
+  13233 LOG Calling filter: com.adobe.granite.csrf.impl.CSRFFilter
+  13240 LOG Calling filter: com.day.cq.personalization.impl.TargetComponentFilter
+  13242 LOG Calling filter: com.day.cq.wcm.core.impl.page.PageLockFilter
+  13246 LOG Calling filter: com.day.cq.wcm.core.impl.WCMComponentFilter
+  13873 LOG Calling filter: com.day.cq.wcm.core.impl.WCMDebugFilter
+  13902 LOG Calling filter: com.day.cq.wcm.core.impl.WCMDeveloperModeFilter
+  13942 TIMER_START{/libs/granite/ui/components/coral/foundation/renderconditions/and/and.jsp#2}
+  56940 TIMER_END{42996,/libs/granite/ui/components/coral/foundation/renderconditions/and/and.jsp#2}
+  56982 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMDeveloperModeFilter, inner=43035, total=43040, outer=5
+  56996 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMDebugFilter, inner=43040, total=43073, outer=33
+  57005 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMComponentFilter, inner=43073, total=43699, outer=626
+  57013 LOG Filter timing: filter=com.day.cq.wcm.core.impl.page.PageLockFilter, inner=43699, total=43702, outer=3
+  57020 LOG Filter timing: filter=com.day.cq.personalization.impl.TargetComponentFilter, inner=43702, total=43705, outer=3
+  57416 LOG Including resource MergedResource [path=/mnt/overlay/cq/core/content/nav/assets/stocksearch/granite:rendercondition/stockfeature, resources=[/libs/cq/core/content/nav/assets/stocksearch/granite:rendercondition/stockfeature]] (SlingRequestPathInfo: path='/mnt/overlay/cq/core/content/nav/assets/stocksearch/granite:rendercondition/stockfeature', selectorString='0.20', extension='html', suffix='/mnt/overlay/cq/core/content/nav/assets')
+  57424 TIMER_START{resolveServlet(/mnt/overlay/cq/core/content/nav/assets/stocksearch/granite:rendercondition/stockfeature)}
+  58335 TIMER_END{909,resolveServlet(/mnt/overlay/cq/core/content/nav/assets/stocksearch/granite:rendercondition/stockfeature)} Using servlet /libs/granite/ui/components/foundation/renderconditions/feature/feature.jsp
+  58343 LOG Applying Includefilters
+  58350 LOG Calling filter: com.adobe.granite.csrf.impl.CSRFFilter
+  58358 LOG Calling filter: com.day.cq.personalization.impl.TargetComponentFilter
+  58361 LOG Calling filter: com.day.cq.wcm.core.impl.page.PageLockFilter
+  58364 LOG Calling filter: com.day.cq.wcm.core.impl.WCMComponentFilter
+  58496 LOG Calling filter: com.day.cq.wcm.core.impl.WCMDebugFilter
+  58506 LOG Calling filter: com.day.cq.wcm.core.impl.WCMDeveloperModeFilter
+  58536 TIMER_START{/libs/granite/ui/components/foundation/renderconditions/feature/feature.jsp#3}
+ 100857 TIMER_END{42319,/libs/granite/ui/components/foundation/renderconditions/feature/feature.jsp#3}
+ 100889 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMDeveloperModeFilter, inner=42346, total=42352, outer=6
+ 100897 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMDebugFilter, inner=42352, total=42365, outer=13
+ 100904 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMComponentFilter, inner=42365, total=42496, outer=131
+ 100912 LOG Filter timing: filter=com.day.cq.wcm.core.impl.page.PageLockFilter, inner=42496, total=42500, outer=4
+ 100919 LOG Filter timing: filter=com.day.cq.personalization.impl.TargetComponentFilter, inner=42500, total=42503, outer=3
+ 101010 LOG Including resource MergedResource [path=/mnt/overlay/cq/core/content/nav/assets/stocksearch/granite:rendercondition/stockaccessible, resources=[/libs/cq/core/content/nav/assets/stocksearch/granite:rendercondition/stockaccessible]] (SlingRequestPathInfo: path='/mnt/overlay/cq/core/content/nav/assets/stocksearch/granite:rendercondition/stockaccessible', selectorString='0.20', extension='html', suffix='/mnt/overlay/cq/core/content/nav/assets')
+ 101019 TIMER_START{resolveServlet(/mnt/overlay/cq/core/content/nav/assets/stocksearch/granite:rendercondition/stockaccessible)}
+ 102002 TIMER_END{981,resolveServlet(/mnt/overlay/cq/core/content/nav/assets/stocksearch/granite:rendercondition/stockaccessible)} Using servlet /libs/dam/gui/coral/components/commons/renderconditions/stockaccessible/stockaccessible.jsp
+ 102009 LOG Applying Includefilters
+ 102015 LOG Calling filter: com.adobe.granite.csrf.impl.CSRFFilter
+ 102022 LOG Calling filter: com.day.cq.personalization.impl.TargetComponentFilter
+ 102025 LOG Calling filter: com.day.cq.wcm.core.impl.page.PageLockFilter
+ 102028 LOG Calling filter: com.day.cq.wcm.core.impl.WCMComponentFilter
+ 102261 LOG Calling filter: com.day.cq.wcm.core.impl.WCMDebugFilter
+ 102269 LOG Calling filter: com.day.cq.wcm.core.impl.WCMDeveloperModeFilter
+ 102296 TIMER_START{/libs/dam/gui/coral/components/commons/renderconditions/stockaccessible/stockaccessible.jsp#4}
+ 151574 TIMER_END{49276,/libs/dam/gui/coral/components/commons/renderconditions/stockaccessible/stockaccessible.jsp#4}
+ 151610 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMDeveloperModeFilter, inner=49302, total=49308, outer=6
+ 151619 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMDebugFilter, inner=49308, total=49318, outer=10
+ 151626 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMComponentFilter, inner=49318, total=49551, outer=233
+ 151633 LOG Filter timing: filter=com.day.cq.wcm.core.impl.page.PageLockFilter, inner=49551, total=49554, outer=3
+ 151641 LOG Filter timing: filter=com.day.cq.personalization.impl.TargetComponentFilter, inner=49554, total=49558, outer=4
+ 151963 LOG Including resource MergedResource [path=/mnt/overlay/cq/core/content/nav/assets/links/granite:rendercondition, resources=[/libs/cq/core/content/nav/assets/links/granite:rendercondition]] (SlingRequestPathInfo: path='/mnt/overlay/cq/core/content/nav/assets/links/granite:rendercondition', selectorString='0.20', extension='html', suffix='/mnt/overlay/cq/core/content/nav/assets')
+ 151971 TIMER_START{resolveServlet(/mnt/overlay/cq/core/content/nav/assets/links/granite:rendercondition)}
+ 152846 TIMER_END{872,resolveServlet(/mnt/overlay/cq/core/content/nav/assets/links/granite:rendercondition)} Using servlet /libs/granite/ui/components/coral/foundation/renderconditions/privilege/privilege.jsp
+ 152852 LOG Applying Includefilters
+ 152858 LOG Calling filter: com.adobe.granite.csrf.impl.CSRFFilter
+ 152865 LOG Calling filter: com.day.cq.personalization.impl.TargetComponentFilter
+ 152868 LOG Calling filter: com.day.cq.wcm.core.impl.page.PageLockFilter
+ 152871 LOG Calling filter: com.day.cq.wcm.core.impl.WCMComponentFilter
+ 153105 LOG Calling filter: com.day.cq.wcm.core.impl.WCMDebugFilter
+ 153114 LOG Calling filter: com.day.cq.wcm.core.impl.WCMDeveloperModeFilter
+ 153139 TIMER_START{/libs/granite/ui/components/coral/foundation/renderconditions/privilege/privilege.jsp#5}
+ 194502 TIMER_END{41360,/libs/granite/ui/components/coral/foundation/renderconditions/privilege/privilege.jsp#5}
+ 194534 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMDeveloperModeFilter, inner=41384, total=41390, outer=6
+ 194542 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMDebugFilter, inner=41390, total=41402, outer=12
+ 194551 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMComponentFilter, inner=41402, total=41634, outer=232
+ 194559 LOG Filter timing: filter=com.day.cq.wcm.core.impl.page.PageLockFilter, inner=41634, total=41638, outer=4
+ 194566 LOG Filter timing: filter=com.day.cq.personalization.impl.TargetComponentFilter, inner=41638, total=41641, outer=3
+ 194836 TIMER_END{183887,/libs/granite/ui/components/shell/globalnav/datasources/navitems/navitems.jsp#1}
+ 194852 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMDeveloperModeFilter, inner=183916, total=183923, outer=7
+ 194861 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMDebugFilter, inner=183923, total=183935, outer=12
+ 194868 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMComponentFilter, inner=183935, total=185172, outer=1237
+ 194877 LOG Filter timing: filter=com.day.cq.wcm.core.impl.page.PageLockFilter, inner=185172, total=185176, outer=4
+ 194884 LOG Filter timing: filter=com.day.cq.personalization.impl.TargetComponentFilter, inner=185176, total=185181, outer=5
+ 195540 LOG Including resource org.apache.jsp.libs.granite.ui.components.shell.globalnav.datasources.navitems.navitems_jsp$3$1, type=granite/ui/components/shell/globalnav/homecard, path=/mnt/overlay/cq/core/content/nav/assets/files, resource=[MergedResource [path=/mnt/overlay/cq/core/content/nav/assets/files, resources=[/libs/cq/core/content/nav/assets/files]]] (SlingRequestPathInfo: path='/mnt/overlay/cq/core/content/nav/assets/files', selectorString='0.20', extension='html', suffix='/mnt/overlay/cq/core/content/nav/assets')
+ 195549 TIMER_START{resolveServlet(/mnt/overlay/cq/core/content/nav/assets/files)}
+ 196417 TIMER_END{866,resolveServlet(/mnt/overlay/cq/core/content/nav/assets/files)} Using servlet /libs/granite/ui/components/shell/globalnav/homecard/homecard.jsp
+ 196424 LOG Applying Includefilters
+ 196430 LOG Calling filter: com.adobe.granite.csrf.impl.CSRFFilter
+ 196437 LOG Calling filter: com.day.cq.personalization.impl.TargetComponentFilter
+ 196440 LOG Calling filter: com.day.cq.wcm.core.impl.page.PageLockFilter
+ 196443 LOG Calling filter: com.day.cq.wcm.core.impl.WCMComponentFilter
+ 196585 LOG Calling filter: com.day.cq.wcm.core.impl.WCMDebugFilter
+ 196594 LOG Calling filter: com.day.cq.wcm.core.impl.WCMDeveloperModeFilter
+ 196617 TIMER_START{/libs/granite/ui/components/shell/globalnav/homecard/homecard.jsp#6}
+ 197285 TIMER_END{666,/libs/granite/ui/components/shell/globalnav/homecard/homecard.jsp#6}
+ 197309 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMDeveloperModeFilter, inner=687, total=693, outer=6
+ 197317 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMDebugFilter, inner=693, total=703, outer=10
+ 197326 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMComponentFilter, inner=703, total=845, outer=142
+ 197333 LOG Filter timing: filter=com.day.cq.wcm.core.impl.page.PageLockFilter, inner=845, total=848, outer=3
+ 197340 LOG Filter timing: filter=com.day.cq.personalization.impl.TargetComponentFilter, inner=848, total=852, outer=4
+ 197406 LOG Including resource org.apache.jsp.libs.granite.ui.components.shell.globalnav.datasources.navitems.navitems_jsp$3$1, type=granite/ui/components/shell/globalnav/homecard, path=/mnt/overlay/cq/core/content/nav/assets/collections, resource=[MergedResource [path=/mnt/overlay/cq/core/content/nav/assets/collections, resources=[/libs/cq/core/content/nav/assets/collections]]] (SlingRequestPathInfo: path='/mnt/overlay/cq/core/content/nav/assets/collections', selectorString='0.20', extension='html', suffix='/mnt/overlay/cq/core/content/nav/assets')
+ 197412 TIMER_START{resolveServlet(/mnt/overlay/cq/core/content/nav/assets/collections)}
+ 197431 TIMER_END{17,resolveServlet(/mnt/overlay/cq/core/content/nav/assets/collections)} Using servlet /libs/granite/ui/components/shell/globalnav/homecard/homecard.jsp
+ 197435 LOG Applying Includefilters
+ 197439 LOG Calling filter: com.adobe.granite.csrf.impl.CSRFFilter
+ 197453 LOG Calling filter: com.day.cq.personalization.impl.TargetComponentFilter
+ 197455 LOG Calling filter: com.day.cq.wcm.core.impl.page.PageLockFilter
+ 197458 LOG Calling filter: com.day.cq.wcm.core.impl.WCMComponentFilter
+ 197575 LOG Calling filter: com.day.cq.wcm.core.impl.WCMDebugFilter
+ 197581 LOG Calling filter: com.day.cq.wcm.core.impl.WCMDeveloperModeFilter
+ 197599 TIMER_START{/libs/granite/ui/components/shell/globalnav/homecard/homecard.jsp#7}
+ 198007 TIMER_END{406,/libs/granite/ui/components/shell/globalnav/homecard/homecard.jsp#7}
+ 198024 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMDeveloperModeFilter, inner=423, total=428, outer=5
+ 198031 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMDebugFilter, inner=428, total=436, outer=8
+ 198038 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMComponentFilter, inner=436, total=552, outer=116
+ 198045 LOG Filter timing: filter=com.day.cq.wcm.core.impl.page.PageLockFilter, inner=552, total=554, outer=2
+ 198051 LOG Filter timing: filter=com.day.cq.personalization.impl.TargetComponentFilter, inner=554, total=557, outer=3
+ 198109 LOG Including resource org.apache.jsp.libs.granite.ui.components.shell.globalnav.datasources.navitems.navitems_jsp$3$1, type=granite/ui/components/shell/globalnav/homecard, path=/mnt/overlay/cq/core/content/nav/assets/links, resource=[MergedResource [path=/mnt/overlay/cq/core/content/nav/assets/links, resources=[/libs/cq/core/content/nav/assets/links]]] (SlingRequestPathInfo: path='/mnt/overlay/cq/core/content/nav/assets/links', selectorString='0.20', extension='html', suffix='/mnt/overlay/cq/core/content/nav/assets')
+ 198115 TIMER_START{resolveServlet(/mnt/overlay/cq/core/content/nav/assets/links)}
+ 198135 TIMER_END{19,resolveServlet(/mnt/overlay/cq/core/content/nav/assets/links)} Using servlet /libs/granite/ui/components/shell/globalnav/homecard/homecard.jsp
+ 198139 LOG Applying Includefilters
+ 198142 LOG Calling filter: com.adobe.granite.csrf.impl.CSRFFilter
+ 198159 LOG Calling filter: com.day.cq.personalization.impl.TargetComponentFilter
+ 198161 LOG Calling filter: com.day.cq.wcm.core.impl.page.PageLockFilter
+ 198164 LOG Calling filter: com.day.cq.wcm.core.impl.WCMComponentFilter
+ 198173 LOG Calling filter: com.day.cq.wcm.core.impl.WCMDebugFilter
+ 198178 LOG Calling filter: com.day.cq.wcm.core.impl.WCMDeveloperModeFilter
+ 198195 TIMER_START{/libs/granite/ui/components/shell/globalnav/homecard/homecard.jsp#8}
+ 198573 TIMER_END{376,/libs/granite/ui/components/shell/globalnav/homecard/homecard.jsp#8}
+ 198589 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMDeveloperModeFilter, inner=392, total=396, outer=4
+ 198596 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMDebugFilter, inner=396, total=401, outer=5
+ 198603 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMComponentFilter, inner=401, total=411, outer=10
+ 198609 LOG Filter timing: filter=com.day.cq.wcm.core.impl.page.PageLockFilter, inner=411, total=414, outer=3
+ 198616 LOG Filter timing: filter=com.day.cq.personalization.impl.TargetComponentFilter, inner=414, total=417, outer=3
+ 198674 LOG Including resource org.apache.jsp.libs.granite.ui.components.shell.globalnav.datasources.navitems.navitems_jsp$3$1, type=granite/ui/components/shell/globalnav/homecard, path=/mnt/overlay/cq/core/content/nav/assets/templates, resource=[MergedResource [path=/mnt/overlay/cq/core/content/nav/assets/templates, resources=[/libs/cq/core/content/nav/assets/templates]]] (SlingRequestPathInfo: path='/mnt/overlay/cq/core/content/nav/assets/templates', selectorString='0.20', extension='html', suffix='/mnt/overlay/cq/core/content/nav/assets')
+ 198679 TIMER_START{resolveServlet(/mnt/overlay/cq/core/content/nav/assets/templates)}
+ 198695 TIMER_END{15,resolveServlet(/mnt/overlay/cq/core/content/nav/assets/templates)} Using servlet /libs/granite/ui/components/shell/globalnav/homecard/homecard.jsp
+ 198698 LOG Applying Includefilters
+ 198701 LOG Calling filter: com.adobe.granite.csrf.impl.CSRFFilter
+ 198705 LOG Calling filter: com.day.cq.personalization.impl.TargetComponentFilter
+ 198707 LOG Calling filter: com.day.cq.wcm.core.impl.page.PageLockFilter
+ 198709 LOG Calling filter: com.day.cq.wcm.core.impl.WCMComponentFilter
+ 198819 LOG Calling filter: com.day.cq.wcm.core.impl.WCMDebugFilter
+ 198826 LOG Calling filter: com.day.cq.wcm.core.impl.WCMDeveloperModeFilter
+ 198843 TIMER_START{/libs/granite/ui/components/shell/globalnav/homecard/homecard.jsp#9}
+ 199244 TIMER_END{399,/libs/granite/ui/components/shell/globalnav/homecard/homecard.jsp#9}
+ 199261 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMDeveloperModeFilter, inner=415, total=419, outer=4
+ 199268 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMDebugFilter, inner=419, total=428, outer=9
+ 199276 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMComponentFilter, inner=428, total=537, outer=109
+ 199283 LOG Filter timing: filter=com.day.cq.wcm.core.impl.page.PageLockFilter, inner=537, total=539, outer=2
+ 199289 LOG Filter timing: filter=com.day.cq.personalization.impl.TargetComponentFilter, inner=539, total=542, outer=3
+ 199345 LOG Including resource org.apache.jsp.libs.granite.ui.components.shell.globalnav.datasources.navitems.navitems_jsp$3$1, type=granite/ui/components/shell/globalnav/homecard, path=/mnt/overlay/cq/core/content/nav/assets/catalogs, resource=[MergedResource [path=/mnt/overlay/cq/core/content/nav/assets/catalogs, resources=[/libs/cq/core/content/nav/assets/catalogs]]] (SlingRequestPathInfo: path='/mnt/overlay/cq/core/content/nav/assets/catalogs', selectorString='0.20', extension='html', suffix='/mnt/overlay/cq/core/content/nav/assets')
+ 199350 TIMER_START{resolveServlet(/mnt/overlay/cq/core/content/nav/assets/catalogs)}
+ 199366 TIMER_END{15,resolveServlet(/mnt/overlay/cq/core/content/nav/assets/catalogs)} Using servlet /libs/granite/ui/components/shell/globalnav/homecard/homecard.jsp
+ 199369 LOG Applying Includefilters
+ 199372 LOG Calling filter: com.adobe.granite.csrf.impl.CSRFFilter
+ 199375 LOG Calling filter: com.day.cq.personalization.impl.TargetComponentFilter
+ 199377 LOG Calling filter: com.day.cq.wcm.core.impl.page.PageLockFilter
+ 199379 LOG Calling filter: com.day.cq.wcm.core.impl.WCMComponentFilter
+ 199494 LOG Calling filter: com.day.cq.wcm.core.impl.WCMDebugFilter
+ 199499 LOG Calling filter: com.day.cq.wcm.core.impl.WCMDeveloperModeFilter
+ 199516 TIMER_START{/libs/granite/ui/components/shell/globalnav/homecard/homecard.jsp#10}
+ 203383 TIMER_END{3864,/libs/granite/ui/components/shell/globalnav/homecard/homecard.jsp#10}
+ 203416 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMDeveloperModeFilter, inner=3882, total=3886, outer=4
+ 203424 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMDebugFilter, inner=3886, total=3894, outer=8
+ 203432 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMComponentFilter, inner=3894, total=4008, outer=114
+ 203439 LOG Filter timing: filter=com.day.cq.wcm.core.impl.page.PageLockFilter, inner=4008, total=4010, outer=2
+ 203447 LOG Filter timing: filter=com.day.cq.personalization.impl.TargetComponentFilter, inner=4010, total=4013, outer=3
+ 203529 LOG Including resource org.apache.jsp.libs.granite.ui.components.shell.globalnav.datasources.navitems.navitems_jsp$3$1, type=granite/ui/components/shell/globalnav/homecard, path=/mnt/overlay/cq/core/content/nav/assets/asyncjobs, resource=[MergedResource [path=/mnt/overlay/cq/core/content/nav/assets/asyncjobs, resources=[/libs/cq/core/content/nav/assets/asyncjobs]]] (SlingRequestPathInfo: path='/mnt/overlay/cq/core/content/nav/assets/asyncjobs', selectorString='0.20', extension='html', suffix='/mnt/overlay/cq/core/content/nav/assets')
+ 203535 TIMER_START{resolveServlet(/mnt/overlay/cq/core/content/nav/assets/asyncjobs)}
+ 203558 TIMER_END{21,resolveServlet(/mnt/overlay/cq/core/content/nav/assets/asyncjobs)} Using servlet /libs/granite/ui/components/shell/globalnav/homecard/homecard.jsp
+ 203563 LOG Applying Includefilters
+ 203568 LOG Calling filter: com.adobe.granite.csrf.impl.CSRFFilter
+ 203573 LOG Calling filter: com.day.cq.personalization.impl.TargetComponentFilter
+ 203575 LOG Calling filter: com.day.cq.wcm.core.impl.page.PageLockFilter
+ 203578 LOG Calling filter: com.day.cq.wcm.core.impl.WCMComponentFilter
+ 203772 LOG Calling filter: com.day.cq.wcm.core.impl.WCMDebugFilter
+ 203779 LOG Calling filter: com.day.cq.wcm.core.impl.WCMDeveloperModeFilter
+ 203808 TIMER_START{/libs/granite/ui/components/shell/globalnav/homecard/homecard.jsp#11}
+ 204220 TIMER_END{410,/libs/granite/ui/components/shell/globalnav/homecard/homecard.jsp#11}
+ 204237 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMDeveloperModeFilter, inner=438, total=443, outer=5
+ 204245 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMDebugFilter, inner=443, total=452, outer=9
+ 204252 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMComponentFilter, inner=452, total=644, outer=192
+ 204258 LOG Filter timing: filter=com.day.cq.wcm.core.impl.page.PageLockFilter, inner=644, total=647, outer=3
+ 204265 LOG Filter timing: filter=com.day.cq.personalization.impl.TargetComponentFilter, inner=647, total=650, outer=3
+ 204602 TIMER_START{resolveIncludedResource(/mnt/overlay/cq/core/content/nav/assets)}
+ 204704 TIMER_END{101,resolveIncludedResource(/mnt/overlay/cq/core/content/nav/assets)} path=/mnt/overlay/cq/core/content/nav/assets resolves to Resource=MergedResource [path=/mnt/overlay/cq/core/content/nav/assets, resources=[/libs/cq/core/content/nav/assets]]
+ 204717 LOG Including resource TypeOverwritingResourceWrapper, type=granite/ui/components/shell/globalnav/meta, path=/mnt/overlay/cq/core/content/nav/assets, resource=[MergedResource [path=/mnt/overlay/cq/core/content/nav/assets, resources=[/libs/cq/core/content/nav/assets]]] (SlingRequestPathInfo: path='/mnt/overlay/cq/core/content/nav/assets', selectorString='0.20', extension='html', suffix='/mnt/overlay/cq/core/content/nav/assets')
+ 204723 TIMER_START{resolveServlet(/mnt/overlay/cq/core/content/nav/assets)}
+ 205468 TIMER_END{743,resolveServlet(/mnt/overlay/cq/core/content/nav/assets)} Using servlet /libs/granite/ui/components/shell/globalnav/meta/meta.jsp
+ 205473 LOG Applying Includefilters
+ 205477 LOG Calling filter: com.adobe.granite.csrf.impl.CSRFFilter
+ 205482 LOG Calling filter: com.day.cq.personalization.impl.TargetComponentFilter
+ 205485 LOG Calling filter: com.day.cq.wcm.core.impl.page.PageLockFilter
+ 205487 LOG Calling filter: com.day.cq.wcm.core.impl.WCMComponentFilter
+ 205497 LOG Calling filter: com.day.cq.wcm.core.impl.WCMDebugFilter
+ 205502 LOG Calling filter: com.day.cq.wcm.core.impl.WCMDeveloperModeFilter
+ 205518 TIMER_START{/libs/granite/ui/components/shell/globalnav/meta/meta.jsp#12}
+ 206010 TIMER_END{490,/libs/granite/ui/components/shell/globalnav/meta/meta.jsp#12}
+ 206030 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMDeveloperModeFilter, inner=506, total=510, outer=4
+ 206038 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMDebugFilter, inner=510, total=514, outer=4
+ 206045 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMComponentFilter, inner=514, total=525, outer=11
+ 206051 LOG Filter timing: filter=com.day.cq.wcm.core.impl.page.PageLockFilter, inner=525, total=528, outer=3
+ 206058 LOG Filter timing: filter=com.day.cq.personalization.impl.TargetComponentFilter, inner=528, total=531, outer=3
+ 206683 LOG Found processor for post processing ProcessorConfiguration: {contentTypes=[text/html], order=-1, active=true, valid=true, processErrorResponse=true, pipeline=(generator=Config(type=htmlparser, config={}), transformers=(Config(type=linkchecker, config={}), Config(type=mobile, config=JcrPropertyMap [node=Node[NodeDelegate{tree=/libs/cq/config/rewriter/default/transformer-mobile: { jcr:primaryType = nt:unstructured, component-optional = true}}], values={jcr:primaryType=nt:unstructured, component-optional=true}]), Config(type=mobiledebug, config=JcrPropertyMap [node=Node[NodeDelegate{tree=/libs/cq/config/rewriter/default/transformer-mobiledebug: { jcr:primaryType = nt:unstructured, component-optional = true}}], values={jcr:primaryType=nt:unstructured, component-optional=true}]), Config(type=contentsync, config=JcrPropertyMap [node=Node[NodeDelegate{tree=/libs/cq/config/rewriter/default/transformer-contentsync: { jcr:primaryType = nt:unstructured, component-optional = true}}], values={jcr:primaryType=nt:unstructured, component-optional=true}]), serializer=Config(type=htmlwriter, config={}))}
+ 207042 TIMER_END{200838,/libs/granite/ui/components/coral/foundation/masonry/masonry.jsp#0}
+ 207059 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMDebugFilter, inner=200865, total=200884, outer=19
+ 207067 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMComponentFilter, inner=200884, total=202203, outer=1319
+ 207074 LOG Filter timing: filter=com.day.cq.wcm.core.impl.page.PageLockFilter, inner=202203, total=202206, outer=3
+ 207102 TIMER_END{207101,Request Processing} Request Processing
+ 207272 LOG Filter timing: filter=com.adobe.cq.dtm.reactor.impl.servlets.ClientLibraryFilter, inner=0, total=202251, outer=202251
+ 207280 LOG Filter timing: filter=com.adobe.cq.dam.webdav.impl.io.DamWebdavRequestFilter, inner=202251, total=202252, outer=1
+ 207287 LOG Filter timing: filter=com.day.cq.wcm.core.impl.warp.TimeWarpFilter, inner=202252, total=202258, outer=6
+ 207294 LOG Filter timing: filter=com.adobe.cq.social.ugcbase.security.impl.SaferSlingPostServlet, inner=202258, total=202262, outer=4
+ 207301 LOG Filter timing: filter=com.adobe.cq.dtm.impl.servlets.DTMLibraryCompatibilityFilter, inner=202262, total=202263, outer=1
+ 207309 LOG Filter timing: filter=com.day.cq.dam.core.impl.assetlinkshare.AdhocAssetShareAuthHandler, inner=202263, total=202266, outer=3
+ 207316 LOG Filter timing: filter=com.day.cq.dam.core.impl.servlet.DamContentDispositionFilter, inner=202266, total=202268, outer=2
+ 207323 LOG Filter timing: filter=com.day.cq.dam.core.impl.servlet.ActivityRecordHandler, inner=202268, total=202282, outer=14
+ 207330 LOG Filter timing: filter=com.adobe.granite.rest.impl.servlet.ApiResourceFilter, inner=202282, total=202333, outer=51
+ 207337 LOG Filter timing: filter=com.adobe.granite.requests.logging.impl.RequestLoggerImpl, inner=202333, total=202362, outer=29
+ 207344 LOG Filter timing: filter=com.adobe.granite.rest.assets.impl.AssetContentDispositionFilter, inner=202362, total=202368, outer=6
+ 207352 LOG Filter timing: filter=com.day.cq.wcm.core.impl.AuthoringUIModeServiceImpl, inner=202368, total=202523, outer=155
+ 207360 LOG Filter timing: filter=com.day.cq.wcm.mobile.core.impl.redirect.RedirectFilter, inner=202523, total=202526, outer=3
+ 207367 LOG Filter timing: filter=org.apache.sling.engine.impl.debug.RequestProgressTrackerLogFilter, inner=202526, total=202533, outer=7
+ 207374 LOG Filter timing: filter=com.adobe.cq.social.commons.cors.CORSAuthenticationFilter, inner=202533, total=202536, outer=3
+ 207381 LOG Filter timing: filter=com.day.cq.wcm.foundation.forms.impl.FormsHandlingServlet, inner=202536, total=202541, outer=5
+ 207388 LOG Filter timing: filter=com.adobe.granite.optout.impl.OptOutFilter, inner=202541, total=202549, outer=8
+ 207396 LOG Filter timing: filter=com.adobe.cq.wcm.core.components.internal.servlets.CoreFormHandlingServlet, inner=202549, total=202553, outer=4
+ 207403 LOG Filter timing: filter=com.day.cq.wcm.core.impl.WCMRequestFilter, inner=202553, total=202569, outer=16
+ 207410 LOG Filter timing: filter=com.adobe.cq.history.impl.HistoryRequestFilter, inner=202569, total=202785, outer=216
+ 207417 LOG Filter timing: filter=org.apache.sling.rewriter.impl.RewriterFilter, inner=202785, total=202939, outer=154
+ 207425 LOG Filter timing: filter=com.adobe.granite.httpcache.impl.InnerCacheFilter, inner=202939, total=202948, outer=9
+ 207432 LOG Filter timing: filter=org.apache.sling.i18n.impl.I18NFilter, inner=202948, total=202952, outer=4
+ 207439 LOG Filter timing: filter=com.adobe.granite.csrf.impl.CSRFFilter, inner=202952, total=202959, outer=7
+ 207446 LOG Filter timing: filter=org.apache.sling.security.impl.ContentDispositionFilter, inner=202959, total=202964, outer=5
+ 207453 LOG Filter timing: filter=org.apache.sling.distribution.servlet.DistributionAgentCreationFilter, inner=202964, total=202966, outer=2

@@ -247,18 +247,27 @@ export class RequestLogParser {
     const request = { start: parsedLines[0], children: [] };
     let parent = request;
     const parents = [];
-    parsedLines.slice(1).forEach((parsedLine, i) => {
+    let lines = parsedLines;
+    if (parsedLines[0].type === 'REQUEST') {
+      lines = parsedLines.slice(1);
+    }
+    lines.forEach((parsedLine, i) => {
       const idx = i + 1;
       try {
         if (parsedLine.type === 'TIMER_END') {
           parent = parents.pop();
-          const startItem = parent.children[parent.children.length - 1];
-          if (parsedLine.data.item !== startItem.start.data.item) {
-            throw new Error('Mismatched start and end line');
+          const startItem = parent?.children[parent.children.length - 1];
+          if (parsedLine.data.item !== startItem?.start.data.item) {
+            this.#log.warn(
+              `Mismatched start and end at line: ${idx + 1} item: '${
+                parsedLine.data.item
+              }'`,
+            );
+          } else {
+            startItem.end = parsedLine;
+            startItem.start.duration = parsedLine.time - startItem.start.time;
+            startItem.value = startItem.start.duration;
           }
-          startItem.end = parsedLine;
-          startItem.start.duration = parsedLine.time - startItem.start.time;
-          startItem.value = startItem.start.duration;
         } else {
           const item = {
             start: parsedLine,
@@ -266,7 +275,12 @@ export class RequestLogParser {
             value: parsedLine.duration || 0,
             name: parsedLine.name,
           };
-          parent.children.push(item);
+          if (!parent) {
+            this.#log.warn(`Missing parent at line: ${idx + 1}`);
+            parent = item;
+          } else {
+            parent.children.push(item);
+          }
           if (parsedLine.type === 'TIMER_START') {
             parents.push(parent);
             parent = item;
@@ -274,7 +288,7 @@ export class RequestLogParser {
         }
       } catch (err) {
         const error = Error(
-          `Failed to parse file error: ${err} at line: ${idx}`,
+          `Failed to parse file error: ${err} at line: ${idx + 1}`,
         );
         err.parsedLine = parsedLine;
         err.lineNumber = idx;
