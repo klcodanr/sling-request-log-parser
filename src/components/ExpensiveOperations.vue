@@ -71,7 +71,9 @@ function search(term) {
           </td>
           <td>{{ entry[1].count.toLocaleString() }}</td>
           <td>
-            {{ (entry[1].executionDuration / 1000000.0).toFixed(4) }} s <small>({{ entry[1].executionDuration.toLocaleString() }} μs)</small><br /><em
+            {{ (entry[1].executionDuration / 1000000.0).toFixed(4) }} s
+            <small>({{ entry[1].executionDuration.toLocaleString() }} μs)</small
+            ><br /><em
               >{{
                 (
                   (entry[1].executionDuration / parseFloat(parsed.totalTime)) *
