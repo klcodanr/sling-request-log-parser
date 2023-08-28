@@ -23,8 +23,8 @@ let tab = ref('flame');
         </h2>
         <h5>Total Lines: {{ parsed.lines.length.toLocaleString() }}</h5>
         <h5>
-          Total Time: {{ parsed.totalTime.toLocaleString() }} microseconds,
-          {{ (parsed.totalTime / 1000000.0).toFixed(4) }} seconds
+          Total Time: 
+          {{ (parsed.totalTime / 1000000.0).toFixed(4) }} seconds, <small>({{ parsed.totalTime.toLocaleString() }} microseconds)</small>
         </h5>
       </div>
 
